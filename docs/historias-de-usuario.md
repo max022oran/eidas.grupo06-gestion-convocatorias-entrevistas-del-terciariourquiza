@@ -35,19 +35,20 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-02 — [Nombre de la historia]
-
+## HU-02 — Empresa edita o cierra convocatorias
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
-| Módulo | |
-| Requisitos relacionados | RF-, RF-0, RF- |
+| Historia | Como empresa, quiero editar o cerrar convocatorias para mantener actualizada la información disponible. |
+| Módulo |Inicio |
+| Requisitos relacionados | RF-, RF-, RF- |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. La empresa debe estar autenticada.
+2. Solo podrá modificar convocatorias pertenecientes a dicha empresa.
+3. El sistema debe permitir modificar los datos habilitados.
+4. La empresa debe poder cerrar una convocatoria.
+5. Una convocatoria cerrada no deberá aceptar nuevas postulaciones.
 
 ### Validación INVEST
 
