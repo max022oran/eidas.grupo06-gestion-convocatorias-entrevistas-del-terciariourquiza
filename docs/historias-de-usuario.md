@@ -26,12 +26,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse sin depender directamente de otras historias, aunque requiere autenticación de la empresa. |
+| Negociable | Sí | Los detalles de la convocatoria pueden acordarse y modificarse durante el desarrollo. |
+| Valiosa | Sí | Permite a la empresa publicar nuevas búsquedas laborales. |
+| Estimable | Sí | Tiene un alcance concreto y se pueden estimar las tareas necesarias. |
+| Pequeña | Sí | Se centra únicamente en crear y publicar una convocatoria. |
+| Verificable | Sí | Los criterios de aceptación permiten comprobar si la convocatoria se crea correctamente. |
 
 ---
 
