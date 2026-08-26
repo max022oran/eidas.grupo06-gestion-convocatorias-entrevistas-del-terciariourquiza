@@ -94,19 +94,22 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-02 — [Nombre de la historia]
+## HU-04 — Usuario carga CV y datos personales
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
-| Módulo | |
+| Historia | Como usuario, quiero cargar mi currículum y datos personales para facilitar el proceso de selección. |
+| Módulo | Usuario |
 | Requisitos relacionados | RF-XX, RF-XX |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. El usuario debe estar autenticado.
+2. El archivo debe estar en formato PDF.
+3. El sistema debe guardar el CV.
+4. El CV debe quedar asociado al usuario.
+5. El sistema debe mostrar una confirmación de carga.
+6. El CV debe poder utilizarse posteriormente para realizar postulaciones.
 
 ### Validación INVEST
 
