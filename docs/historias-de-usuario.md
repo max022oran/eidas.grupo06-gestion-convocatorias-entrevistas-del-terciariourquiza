@@ -198,9 +198,13 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. Debe existir una postulación.
+2. La empresa debe seleccionar un postulante.
+3. Debe indicar fecha y hora.
+4. Debe indicar la modalidad cuando corresponda.
+5. El sistema debe registrar la entrevista.
+6. La entrevista debe quedar asociada a la postulación.
+7. El usuario debe poder consultar la entrevista.
 
 
 ### Validación INVEST
@@ -226,9 +230,10 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. El sistema debe mostrar las convocatorias vigentes.
+2. Las convocatorias vencidas no deben aparecer.
+3. El usuario debe poder consultar los datos de cada convocatoria.
+4. El usuario debe poder seleccionar una convocatoria para consultar su información completa.
 
 
 ### Validación INVEST
