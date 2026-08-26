@@ -188,12 +188,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-07 — [Nombre del modulo]
+## HU-07 — Programar entrevistas
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como empresa, quiero programar entrevistas para organizar las reuniones con los candidatos. |
+| Módulo | Entrevista |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
@@ -216,12 +216,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-08 — [Nombre del modulo]
+## HU-08 — Recibir información de entrevista
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como usuario, quiero recibir información de las entrevistas para conocer la fecha y horario asignados. |
+| Módulo | aronou |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
