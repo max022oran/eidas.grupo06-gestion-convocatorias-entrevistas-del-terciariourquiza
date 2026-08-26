@@ -262,7 +262,9 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 1. La empresa debe estar autenticada.
 2. Debe completar los campos obligatorios.
 3. La fecha de vencimiento debe ser posterior a la fecha de publicación.
-4. 
+4. El sistema debe validar la información.
+5. La convocatoria debe quedar registrada.
+6. Si se encuentra vigente, debe aparecer entre las convocatorias disponibles.
 
 
 ### Validación INVEST
@@ -278,19 +280,20 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-10 — [Nombre del modulo]
-
+## HU-10 — Editar convocatoria
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como empresa, quiero editar una convocatoria para mantener actualizada la información publicada. |
+| Módulo | Entrevista |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. La empresa debe estar autenticada.
+2. Solo puede modificar convocatorias pertenecientes a ella.
+3. El sistema debe permitir modificar los campos habilitados.
+4. Los datos deben ser validados.
+5. Los cambios deben quedar guardados correctamente.
 
 
 ### Validación INVEST
