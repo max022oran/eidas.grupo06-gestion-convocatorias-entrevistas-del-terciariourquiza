@@ -163,9 +163,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. La empresa debe estar autenticada.
+2. Debe seleccionar una convocatoria propia.
+3. El sistema debe mostrar sus postulantes.
+4. La empresa debe poder consultar la información correspondiente.
+5. La empresa debe poder consultar el CV del postulante.
+6. - No debe poder consultar postulantes de convocatorias pertenecientes a otra empresa.
 
 ### Validación INVEST
 
