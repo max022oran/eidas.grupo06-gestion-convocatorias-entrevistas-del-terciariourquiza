@@ -135,9 +135,14 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. El usuario debe estar autenticado.
+2. El usuario debe tener un CV cargado.
+3. La convocatoria debe encontrarse vigente.
+4. El usuario no debe estar previamente postulado a esa convocatoria.
+5. El sistema debe registrar la postulación.
+6. El sistema debe registrar la fecha de postulación.
+7. El sistema debe mostrar un mensaje de confirmación.
+8. La postulación debe aparecer en "Mis postulaciones".
 
 ### Validación INVEST
 
@@ -168,7 +173,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 3. El sistema debe mostrar sus postulantes.
 4. La empresa debe poder consultar la información correspondiente.
 5. La empresa debe poder consultar el CV del postulante.
-6. - No debe poder consultar postulantes de convocatorias pertenecientes a otra empresa.
+6. No debe poder consultar postulantes de convocatorias pertenecientes a otra empresa.
 
 ### Validación INVEST
 
