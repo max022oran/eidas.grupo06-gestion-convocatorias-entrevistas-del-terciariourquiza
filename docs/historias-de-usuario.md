@@ -85,12 +85,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | El registro puede desarrollarse independientemente de las funcionalidades posteriores. |
+| Negociable | Sí | Los datos requeridos y las reglas de validación pueden definirse durante el desarrollo. |
+| Valiosa | Sí | Permite al usuario acceder al sistema y utilizar las funcionalidades destinadas a postulantes. |
+| Estimable | Sí | El alcance está claramente definido y permite estimar el trabajo. |
+| Pequeña | Sí | Se limita al proceso de registro del usuario. |
+| Verificable | Sí | Los criterios permiten comprobar el registro correcto y los casos de error. |
 
 ---
 
@@ -115,12 +115,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede implementarse una vez disponible la autenticación, sin depender de las postulaciones. |
+| Negociable | Sí | Se pueden acordar formatos, tamaño máximo y otras condiciones del archivo. |
+| Valiosa | Sí | Permite que el usuario tenga su CV disponible para participar en búsquedas laborales. |
+| Estimable | Sí | El alcance de carga y asociación del CV está definido. |
+| Pequeña | Sí | Se concentra en cargar y guardar el CV del usuario. |
+| Verificable | Sí | Se puede comprobar el formato, almacenamiento, asociación y confirmación de carga. |
 
 
 ---
@@ -148,12 +148,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Aunque requiere usuario registrado y CV, la funcionalidad de postulación puede desarrollarse como una historia independiente. |
+| Negociable | Sí | Las condiciones y datos de la postulación pueden ajustarse según las necesidades del sistema. |
+| Valiosa | Sí | Permite al usuario participar efectivamente en los procesos de selección. |
+| Estimable | Sí | Las tareas necesarias para registrar y validar una postulación son identificables. |
+| Pequeña | Sí | Se enfoca en una única acción principal: realizar una postulación. |
+| Verificable | Sí | Los criterios permiten comprobar que la postulación se registra correctamente y no se duplica. |
 
 
 ----
@@ -179,12 +179,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse como una funcionalidad independiente para la empresa. |
+| Negociable | Sí | La forma de mostrar la información y los datos visibles puede acordarse. |
+| Valiosa | Sí | Permite a la empresa consultar y evaluar los perfiles recibidos. |
+| Estimable | Sí | El alcance está definido: listar postulantes y consultar su información y CV. |
+| Pequeña | Sí | Se concentra en la consulta de postulantes de una convocatoria. |
+| Verificable | Sí | Se puede comprobar que solo se muestran postulantes de convocatorias propias. |
 
 ---
 
@@ -211,12 +211,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse como una funcionalidad específica dentro del proceso de selección. |
+| Negociable | Sí | Los datos de la entrevista y las modalidades pueden definirse según las necesidades. |
+| Valiosa | Sí | Permite organizar las entrevistas con los candidatos seleccionados. |
+| Estimable | Sí | Las tareas necesarias para registrar una entrevista están claramente delimitadas. |
+| Pequeña | Sí | Se centra en programar una entrevista para un postulante. |
+| Verificable | Sí | Los criterios permiten comprobar que la entrevista queda registrada y asociada correctamente. |
 
 ---
 
@@ -240,12 +240,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse como consulta de las entrevistas asignadas al usuario. |
+| Negociable | Sí | La forma de mostrar la información puede acordarse. |
+| Valiosa | Sí | Permite al usuario conocer cuándo y cómo debe realizar la entrevista. |
+| Estimable | Sí | El alcance se limita a consultar la información de las entrevistas. |
+| Pequeña | Sí | Se centra en visualizar las entrevistas asignadas. |
+| Verificable | Sí | Se puede comprobar que el usuario visualiza correctamente fecha, hora y modalidad. |
 
 ---
 
@@ -254,7 +254,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como empresa, quiero crear una convocatoria para publicar una nueva búsqueda. |
-| Módulo |Convocatoria|
+| Módulo | Convocatoria |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
@@ -271,12 +271,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse como una funcionalidad independiente |
+| Negociable | Sí | Los datos y condiciones de la convocatoria pueden acordarse |
+| Valiosa | Sí | Permite a la empresa publicar nuevas búsquedas laborales. |
+| Estimable | Sí | El alcance está definido y permite estimar las tareas. |
+| Pequeña | Sí | Se concentra exclusivamente en crear una convocatoria. |
+| Verificable | Sí | Los criterios de aceptación permiten comprobar su funcionamiento. |
 
 ---
 
@@ -300,12 +300,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede implementarse independientemente de la creación de nuevas convocatorias. |
+| Negociable | Sí | Los campos que podrán modificarse pueden definirse durante el desarrollo. |
+| Valiosa | Sí | Permite mantener actualizada la información de las búsquedas. |
+| Estimable | Sí | El alcance y las tareas necesarias están definidos. |
+| Pequeña | Sí | Se limita a modificar una convocatoria existente. |
+| Verificable | Sí | Se puede comprobar que los cambios se validan y guardan correctamente. |
 
 ---
 
@@ -330,12 +330,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede implementarse como una funcionalidad separada de la edición. |
+| Negociable | Sí | La forma de confirmación y las condiciones de cierre pueden acordarse. |
+| Valiosa | Sí | Permite impedir postulaciones cuando una búsqueda ya finalizó. |
+| Estimable | Sí | El alcance es concreto y permite estimar el trabajo. |
+| Pequeña | Sí | Se concentra en una única acción: cerrar una convocatoria. |
+| Verificable | Sí | Se puede comprobar que cambia el estado y que ya no acepta postulaciones. |
 
 ---
 
@@ -358,11 +358,11 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede desarrollarse como una funcionalidad independiente para la empresa. |
+| Negociable | Sí | Se puede acordar qué información del postulante será visible. |
+| Valiosa | Sí | Permite a la empresa analizar los perfiles que se postularon. |
+| Estimable | Sí | El alcance está definido y las tareas son identificables. |
+| Pequeña | Sí | Se limita a consultar los postulantes de una convocatoria. |
+| Verificable | Sí | Los criterios permiten comprobar que se muestran los postulantes correctos y sus CV. |
 
 ---
