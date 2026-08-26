@@ -225,7 +225,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como usuario, quiero recibir información de las entrevistas para conocer la fecha y horario asignados. |
-| Módulo | aronou |
+| Módulo | Convocatorias |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
@@ -249,19 +249,20 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-09 — [Nombre del modulo]
+## HU-09 — Crear convocatorias
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como empresa, quiero crear una convocatoria para publicar una nueva búsqueda. |
+| Módulo |Convocatoria|
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. La empresa debe estar autenticada.
+2. Debe completar los campos obligatorios.
+3. La fecha de vencimiento debe ser posterior a la fecha de publicación.
+4. 
 
 
 ### Validación INVEST
