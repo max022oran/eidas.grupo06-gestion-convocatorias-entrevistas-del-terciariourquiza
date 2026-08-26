@@ -284,7 +284,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como empresa, quiero editar una convocatoria para mantener actualizada la información publicada. |
-| Módulo | Entrevista |
+| Módulo | Convocatorias |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
@@ -309,19 +309,21 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-11 — [Nombre del modulo]
+## HU-11 —  Cerrar convocatoria
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como empresa, quiero cerrar una convocatoria para impedir nuevas postulaciones cuando la búsqueda haya finalizado. |
+| Módulo | Convocatorias |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. La empresa debe estar autenticada.
+2. Debe seleccionar una convocatoria propia.
+3. El sistema debe solicitar confirmación.
+4. Al confirmar, la convocatoria debe cambiar a estado cerrada.
+5. Una convocatoria cerrada no debe permitir nuevas postulaciones.
 
 
 ### Validación INVEST
@@ -337,20 +339,20 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-12 — [Nombre del modulo]
-
+## HU-12 — Ver postulantes
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
-| Módulo | |
+| Historia | Como empresa, quiero visualizar los postulantes de una convocatoria para evaluar los perfiles recibidos. |
+| Módulo | Convocatorias |
 | Requisitos relacionados | RF-00, RF-01 |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
-
+1. La empresa debe estar autenticada.
+2. Debe seleccionar una convocatoria propia.
+3. El sistema debe mostrar los postulantes correspondientes.
+4. La empresa debe poder consultar los datos necesarios para evaluar el perfil.
+5. La empresa debe poder consultar el CV del postulante.
 
 ### Validación INVEST
 
