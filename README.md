@@ -1,4 +1,4 @@
-# [Nombre del Sistema] — Grupo [N]
+# [Gestión de Convocatorias y Entrevistas del Terciario Urquiza] — Grupo [6]
 
 > Materia: Diseño de Sistemas Web — Analista Funcional de Sistemas  
 > Institución: Terciario Urquiza — Rosario  
@@ -11,11 +11,13 @@ Ver [integrantes.md](integrantes.md)
 
 ## Descripción del proyecto
 
-_Breve descripción del sistema que el grupo está analizando y documentando._
+_En muchas instituciones / organizaciones donde se realizan convocatorias (ya sea laborales, educativas o de prácticas), el proceso de selección suele ser desordenado y poco eficiente. 
+Generalmente, los postulantes cargan sus datos, pero luego no existe un seguimiento claro del estado de su postulación, entrevistas o resultados finales. Esto genera confusión tanto para los administradores como para los usuarios. 
+A partir de esta problemática, se propone el desarrollo de un sistema web que permita gestionar convocatorias, postulaciones y entrevistas, centralizando toda la información en una única plataforma.._
 
 ## Caso de estudio
 
-_Nombre del organismo o empresa comitente y contexto del problema que el sistema resuelve._
+_Bolsa de trabajo - Terciario Urquiza._
 
 ## Entregas
 
