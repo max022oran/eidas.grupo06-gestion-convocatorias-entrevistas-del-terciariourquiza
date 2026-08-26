@@ -185,3 +185,173 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Estimable | | |
 | Pequeña | | |
 | Verificable | | |
+
+---
+
+## HU-07 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
+
+## HU-08 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
+
+## HU-09 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
+
+## HU-10 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
+
+## HU-11 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
+
+## HU-12 — [Nombre del modulo]
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como [Usuario], quiero [hacer] para [objetivo] |
+| Módulo | |
+| Requisitos relacionados | RF-00, RF-01 |
+
+### Criterios de aceptación
+
+1. 
+2. 
+3. 
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente | | |
+| Negociable | | |
+| Valiosa | | |
+| Estimable | | |
+| Pequeña | | |
+| Verificable | | |
+
+---
