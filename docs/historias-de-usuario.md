@@ -11,7 +11,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como empresa, quiero crear una convocatoria laboral para publicar nuevas búsquedas de personal. |
 | Módulo | Inicio |
-| Requisitos relacionados | RF-01, RF-02, RF-24 |
+| Requisitos relacionados | RF-, RF-, RF- |
 
 ### Criterios de aceptación
 
