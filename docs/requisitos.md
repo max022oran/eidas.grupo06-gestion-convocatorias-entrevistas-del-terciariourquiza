@@ -40,18 +40,14 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 
 | ID | Requisito |
 |----|-----------|
-| RNF-01  | El sistema debe garantizar la disponibilidad del servicio web para permitir el acceso de los usuarios y la gestión de convocatorias. |
-| RNF-02  | El sistema debe mantener disponible la información de convocatorias, postulaciones, usuarios y entrevistas durante el funcionamiento de la plataforma. |
-| RNF-03  | El sistema debe contar con mecanismos de respaldo de la información para evitar la pérdida de datos ante fallos técnicos. |
-| RNF-04  | El sistema debe permitir la recuperación de la información respaldada ante una pérdida de datos. |
+|RNF-01|	El sistema debe ser accesible desde el navegador web.|
+|RNF-02|	El sistema debe actualizar la información en tiempo real.|
 
 ### Seguridad y usabilidad
 
 | ID | Requisito |
 |----|-----------|
-| RNF-05  | El sistema debe proteger los datos personales y currículums almacenados, garantizando su confidencialidad. |
-| RNF-06  | El sistema debe restringir el acceso a la información según los permisos correspondientes a cada rol de usuario. |
-| RNF-07  | El sistema debe validar los archivos PDF cargados por los usuarios para reducir el riesgo de archivos maliciosos. |
-| RNF-08  | El sistema debe registrar los accesos y las actividades relevantes de los usuarios para facilitar su monitoreo y auditoría. |
-| RNF-09  | El sistema debe presentar una interfaz simple y fácil de utilizar para evitar dificultades en la adopción de la plataforma por parte de los usuarios. |
-| RNF-10  | El sistema debe garantizar la protección de la información personal de los postulantes frente a accesos no autorizados. |
+|RNF-03|	El sistema debe ser fácil de usar. El proceso de postulación no debe requerir más de 4 pasos una vez que el usuario ha iniciado sesión.|
+|RNF-04|	El sistema debe restringir el acceso únicamente a usuarios con correos institucionales válidos.|
+|RNF-05|	El sistema debe garantizar la seguridad de los datos.|
+|RNF-06|	El sistema debe validar correctamente los formularios.|
