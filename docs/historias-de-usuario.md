@@ -54,12 +54,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | | |
-| Negociable | | |
-| Valiosa | | |
-| Estimable | | |
-| Pequeña | | |
-| Verificable | | |
+| Independiente | Sí | Puede implementarse de forma separada de otras funcionalidades.5 |
+| Negociable | Sí | Los campos editables y las condiciones de cierre pueden definirse durante el desarrollo. |
+| Valiosa | Sí | Permite mantener actualizada la información y controlar el estado de las convocatorias. |
+| Estimable | Sí | Las tareas necesarias para editar y cerrar una convocatoria son identificables. |
+| Pequeña | No | Incluye dos funcionalidades distintas: editar y cerrar una convocatoria. |
+| Verificable | Sí | Los criterios permiten comprobar que la edición y el cierre funcionan correctamente. |
 
 
 ---
