@@ -64,7 +64,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-03 — Usuario se registra
+## HU-03 — Registrarme
 
 | Campo | Detalle |
 |-------|---------|
@@ -94,7 +94,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-04 — Usuario carga CV y datos personales
+## HU-04 — Cargar CV
 
 | Campo | Detalle |
 |-------|---------|
@@ -125,12 +125,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-02 — [Nombre de la historia]
+## HU-05 — Postularme a una convocatoria
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
-| Módulo | |
+| Historia | Como usuario, quiero postularme a una convocatoria para participar en el proceso de selección. |
+| Módulo | Usuario |
 | Requisitos relacionados | RF-XX, RF-XX |
 
 ### Criterios de aceptación
@@ -153,11 +153,11 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ----
 
-## HU-02 — [Nombre de la historia]
+## HU-06 — Visualizar postulantes
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
+| Historia | Como empresa, quiero visualizar la lista de postulantes para evaluar los perfiles recibidos. |
 | Módulo | |
 | Requisitos relacionados | RF-XX, RF-XX |
 
