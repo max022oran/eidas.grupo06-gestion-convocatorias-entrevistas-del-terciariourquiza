@@ -64,19 +64,22 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-02 — [Nombre de la historia]
+## HU-03 — Usuario se registra
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como [rol], quiero [acción], para [objetivo]. |
-| Módulo | |
+| Historia |Como usuario, quiero registrarme en el sistema para poder postularme a diferentes convocatorias.|
+| Módulo | Usuario |
 | Requisitos relacionados | RF-XX, RF-XX |
 
 ### Criterios de aceptación
 
-1. 
-2. 
-3. 
+1. El usuario debe ingresar un correo institucional válido.
+2. Los campos obligatorios deben estar completos.
+3. El correo no debe estar registrado previamente.
+4. El sistema debe validar los datos.
+5. Si son correctos, debe registrar al usuario.
+6. El sistema debe informar que el registro fue exitoso.
 
 ### Validación INVEST
 
