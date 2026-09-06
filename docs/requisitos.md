@@ -6,7 +6,7 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 
 ## Requisitos funcionales
 
-### Módulo 1 — [Gestión de Usuarios y Control de Acceso]
+### Módulo 1 — Gestión de Usuarios y Control de Acceso
 
 | ID | Requisito |
 |----|-----------|
@@ -19,7 +19,7 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 |RF-07|	El sistema debe bloquear temporalmente el acceso ante múltiples intentos de autenticación incorrectos. |
 |RF-08|	El administrador debe poder gestionar las cuentas de los usuarios. |
 
-### Módulo 2 — [Convocatorias]
+### Módulo 2 — Convocatorias
 
 | ID | Requisito |
 |----|-----------|
