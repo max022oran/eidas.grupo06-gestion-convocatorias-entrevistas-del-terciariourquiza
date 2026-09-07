@@ -37,6 +37,9 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 |RF-20| La empresa debe poder cerrar sus convocatorias para impedir nuevas postulaciones. |
 
 ### Módulo 3 — Entrevistas
+
+| ID | Requisito |
+|----|-----------|
 |RF-21| La empresa debe poder programar entrevistas para los postulantes de sus convocatorias, indicando fecha, hora y modalidad. |
 |RF-22| El usuario debe poder consultar la información de las entrevistas asignadas a sus postulaciones. |
 
