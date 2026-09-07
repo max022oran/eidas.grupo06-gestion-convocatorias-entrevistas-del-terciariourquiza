@@ -30,5 +30,5 @@
 | Stakeholder | Tipo | Nivel de impacto |
 |-------------|------|-----------------|
 | Administrador | Interno | Alto |
-| Empresa | Interno | Alto |
+| Empresa | Externo | Alto |
 | Usuario/Postulante | Externo | Medio |
