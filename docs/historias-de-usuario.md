@@ -40,7 +40,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como empresa, quiero editar o cerrar convocatorias para mantener actualizada la información disponible. |
 | Módulo |Inicio |
-| Requisitos relacionados | RF-, RF-, RF- |
+| Requisitos relacionados | RF-07, RF-17, RF-18 |
 
 ### Criterios de aceptación
 
@@ -70,7 +70,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia |Como usuario, quiero registrarme en el sistema para poder postularme a diferentes convocatorias.|
 | Módulo | Usuario |
-| Requisitos relacionados | RF-XX, RF-XX |
+| Requisitos relacionados | RF-02, RF-03, RF-11 |
 
 ### Criterios de aceptación
 
@@ -100,7 +100,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como usuario, quiero cargar mi currículum y datos personales para facilitar el proceso de selección. |
 | Módulo | Usuario |
-| Requisitos relacionados | RF-XX, RF-XX |
+| Requisitos relacionados | RF-07 |
 
 ### Criterios de aceptación
 
