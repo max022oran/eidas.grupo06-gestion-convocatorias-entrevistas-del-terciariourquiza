@@ -9,7 +9,7 @@
 
 ---
 
-## Empresa.
+## Empresa
 
 **Tipo:** Externo   
 **Por qué es clave:** La empresa es la que genera las oportunidades laborales que hacen funcionar la bolsa de trabajo, publica las convocatorias, define los requisitos de los puestos, controla los CV y consultan a los postulantes.
@@ -17,7 +17,7 @@
 
 ---
 
-## Usuario/Postulante.
+## Usuario/Postulante
 
 **Tipo:** Externo   
 **Por qué es clave:** Representan a la persona que busca y se postula a las oportunidades laborales. Ellos se registran en la plataforma, cargan su CV, pueden consultar alguna convocatoria, postularse a distintos puestos, consultar el estado y resultado de sus postulaciones y participar en entrevistas.
