@@ -6,7 +6,7 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 
 ## Requisitos funcionales
 
-### Módulo 1 — Gestión de Usuarios y Control de Acceso
+### Módulo 1 — Usuarios
 
 | ID | Requisito |
 |----|-----------|
@@ -18,21 +18,27 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 |RF-06|	El sistema debe registrar los intentos de acceso fallidos. |
 |RF-07|	El sistema debe bloquear temporalmente el acceso ante múltiples intentos de autenticación incorrectos. |
 |RF-08|	El administrador debe poder gestionar las cuentas de los usuarios. |
+|RF-09| El usuario debe poder cargar, actualizar y almacenar su currículum vitae en formato PDF, quedando asociado a su cuenta. |
 
 ### Módulo 2 — Convocatorias
 
 | ID | Requisito |
 |----|-----------|
-|RF-09|	El administrador debe poder crear, editar y eliminar convocatorias. |
-|RF-10|	El usuario debe poder visualizar las convocatorias disponibles. |
-|RF-11|	El usuario debe poder postularse a una convocatoria. |
-|RF-12|	El sistema debe validar que el usuario tenga un CV cargado antes de permitirle postularse. |
-|RF-13|	El sistema debe utilizar automáticamente el CV cargado por el usuario en cada postulación. |
-|RF-14|	El sistema debe impedir que un usuario se postule dos veces a la misma convocatoria. |
-|RF-15|	El sistema debe ocultar las convocatorias que se encuentren vencidas. |
-|RF-16|	El administrador debe poder visualizar y evaluar a los postulantes de una convocatoria. |
-|RF-17|	El sistema debe permitir registrar los resultados de las postulaciones. |
-|RF-18|	El sistema debe mostrar al usuario los resultados de sus postulaciones. |
+|RF-10|	El administrador debe poder crear, editar y eliminar convocatorias. |
+|RF-11|	El usuario debe poder visualizar las convocatorias disponibles. |
+|RF-12|	El usuario debe poder postularse a una convocatoria. |
+|RF-13|	El sistema debe validar que el usuario tenga un CV cargado antes de permitirle postularse. |
+|RF-14|	El sistema debe utilizar automáticamente el CV cargado por el usuario en cada postulación. |
+|RF-15|	El sistema debe impedir que un usuario se postule dos veces a la misma convocatoria. |
+|RF-16|	El sistema debe ocultar las convocatorias que se encuentren vencidas. |
+|RF-17|	El administrador debe poder visualizar y evaluar a los postulantes de una convocatoria. |
+|RF-18|	El sistema debe permitir registrar los resultados de las postulaciones. |
+|RF-19|	El sistema debe mostrar al usuario los resultados de sus postulaciones. |
+|RF-20| La empresa debe poder cerrar sus convocatorias para impedir nuevas postulaciones. |
+
+### Módulo 3 — Entrevistas
+|RF-21| La empresa debe poder programar entrevistas para los postulantes de sus convocatorias, indicando fecha, hora y modalidad. |
+|RF-22| El usuario debe poder consultar la información de las entrevistas asignadas a sus postulaciones. |
 
 ## Requisitos no funcionales
 
