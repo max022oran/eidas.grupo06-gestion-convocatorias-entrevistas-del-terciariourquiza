@@ -11,7 +11,7 @@
 
 ## Empresa.
 
-**Tipo:** Interno   
+**Tipo:** Externo   
 **Por qué es clave:** La empresa es la que genera las oportunidades laborales que hacen funcionar la bolsa de trabajo, publica las convocatorias, define los requisitos de los puestos, controla los CV y consultan a los postulantes.
 
 
