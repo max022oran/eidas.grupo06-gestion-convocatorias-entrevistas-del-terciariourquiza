@@ -23,7 +23,7 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 
 | ID | Requisito |
 |----|-----------|
-|RF-09|	El administrador debe poder crear convocatorias. |
+|RF-09|	El administrador debe poder crear, editar y eliminar convocatorias. |
 |RF-10|	El usuario debe poder visualizar las convocatorias disponibles. |
 |RF-11|	El usuario debe poder postularse a una convocatoria. |
 |RF-12|	El sistema debe validar que el usuario tenga un CV cargado antes de permitirle postularse. |
