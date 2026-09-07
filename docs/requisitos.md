@@ -50,11 +50,4 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 |RNF-03|	El sistema debe ser fácil de usar. El proceso de postulación no debe requerir más de 4 pasos una vez que el usuario ha iniciado sesión.|
 |RNF-04|	El sistema debe permitir el registro y acceso únicamente a usuarios que posean un correo electrónico institucional con el dominio autorizado por la institución.|
 |RNF-05|	El sistema debe requerir autenticación mediante correo institucional y contraseña para acceder a las funciones que involucren información personal o administrativa. Las contraseñas no deben almacenarse en texto plano.|
-|RNF-06|	El sistema debe impedir el envío de formularios que contengan campos obligatorios vacíos o datos con formato inválido, mostrando un mensaje de error específico antes de permitir su envío.
-Así, todos los requisitos tienen algo que se puede comprobar durante las pruebas.
-Por ejemplo:
-RNF-02: se puede medir si la actualización tarda menos de 5 segundos.
-RNF-03: se pueden contar los pasos.
-RNF-04: se puede probar con un correo institucional válido y otro no autorizado.
-RNF-05: se puede verificar que no haya acceso sin autenticación y cómo se almacenan las contraseñas.
-RNF-06: se pueden realizar pruebas enviando formularios vacíos o con datos incorrectos.|
+|RNF-06|	El sistema debe impedir el envío de formularios que contengan campos obligatorios vacíos o datos con formato inválido, mostrando un mensaje de error específico antes de permitir su envío. Así, todos los requisitos tienen algo que se puede comprobar durante las pruebas. Por ejemplo: RNF-02: se puede medir si la actualización tarda menos de 5 segundos; RNF-03: se pueden contar los pasos; RNF-04: se puede probar con un correo institucional válido y otro no autorizado; RNF-05: se puede verificar que no haya acceso sin autenticación y cómo se almacenan las contraseñas; RNF-06: se pueden realizar pruebas enviando formularios vacíos o con datos incorrectos.|
