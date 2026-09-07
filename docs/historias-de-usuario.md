@@ -11,7 +11,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como empresa, quiero crear una convocatoria laboral para publicar nuevas búsquedas de personal. |
 | Módulo | Inicio |
-| Requisitos relacionados | RF-09, RF-16|
+| Requisitos relacionados | RF-10, RF-16 |
 
 ### Criterios de aceptación
 
@@ -36,11 +36,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 ---
 
 ## HU-02 — Empresa edita o cierra convocatorias
+
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como empresa, quiero editar o cerrar convocatorias para mantener actualizada la información disponible. |
 | Módulo |Inicio |
-| Requisitos relacionados | RF-07, RF-17, RF-18 |
+| Requisitos relacionados | RF-10, RF-20 |
 
 ### Criterios de aceptación
 
@@ -61,7 +62,6 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Pequeña | No | Incluye dos funcionalidades distintas: editar y cerrar una convocatoria. |
 | Verificable | Sí | Los criterios permiten comprobar que la edición y el cierre funcionan correctamente. |
 
-
 ---
 
 ## HU-03 — Registrarme
@@ -70,7 +70,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia |Como usuario, quiero registrarme en el sistema para poder postularme a diferentes convocatorias.|
 | Módulo | Usuario |
-| Requisitos relacionados | RF-02, RF-03, RF-11 |
+| Requisitos relacionados | RF-01, RF-03 |
 
 ### Criterios de aceptación
 
@@ -100,7 +100,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como usuario, quiero cargar mi currículum y datos personales para facilitar el proceso de selección. |
 | Módulo | Usuario |
-| Requisitos relacionados | RF-07 |
+| Requisitos relacionados | RF-09 |
 
 ### Criterios de aceptación
 
@@ -131,7 +131,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como usuario, quiero postularme a una convocatoria para participar en el proceso de selección. |
 | Módulo | Usuario |
-| Requisitos relacionados | RF-XX, RF-XX |
+| Requisitos relacionados | RF-12, RF-13, RF-14, RF-15 |
 
 ### Criterios de aceptación
 
@@ -164,7 +164,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como empresa, quiero visualizar la lista de postulantes para evaluar los perfiles recibidos. |
 | Módulo | |
-| Requisitos relacionados | RF-XX, RF-XX |
+| Requisitos relacionados | RF-17 |
 
 ### Criterios de aceptación
 
@@ -194,7 +194,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como empresa, quiero programar entrevistas para organizar las reuniones con los candidatos. |
 | Módulo | Entrevista |
-| Requisitos relacionados | RF-00, RF-01 |
+| Requisitos relacionados | RF-21 |
 
 ### Criterios de aceptación
 
@@ -226,7 +226,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 |-------|---------|
 | Historia | Como usuario, quiero recibir información de las entrevistas para conocer la fecha y horario asignados. |
 | Módulo | Convocatorias |
-| Requisitos relacionados | RF-00, RF-01 |
+| Requisitos relacionados | RF-22 |
 
 ### Criterios de aceptación
 
@@ -249,120 +249,127 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 ---
 
-## HU-09 — Crear convocatorias
+## HU-09 — Registrar resultado de entrevista
 
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como empresa, quiero crear una convocatoria para publicar una nueva búsqueda. |
-| Módulo | Convocatoria |
-| Requisitos relacionados | RF-00, RF-01 |
+| Historia | Como empresa, quiero registrar el resultado de cada entrevista para realizar el seguimiento del proceso. |
+| Módulo | Entrevistas |
+| Requisitos relacionados | RF-17 |
 
 ### Criterios de aceptación
 
-1. La empresa debe estar autenticada.
-2. Debe completar los campos obligatorios.
-3. La fecha de vencimiento debe ser posterior a la fecha de publicación.
-4. El sistema debe validar la información.
-5. La convocatoria debe quedar registrada.
-6. Si se encuentra vigente, debe aparecer entre las convocatorias disponibles.
+1. Debe existir una entrevista registrada.
+2. La empresa debe poder ingresar el resultado.
+3. El sistema debe guardar el resultado.
+4. El resultado debe quedar asociado a la entrevista.
+5. El estado de la postulación debe actualizarse cuando corresponda.
+6. El usuario debe poder consultar el resultado cuando sea habilitado.
 
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Puede desarrollarse como una funcionalidad independiente |
-| Negociable | Sí | Los datos y condiciones de la convocatoria pueden acordarse |
-| Valiosa | Sí | Permite a la empresa publicar nuevas búsquedas laborales. |
-| Estimable | Sí | El alcance está definido y permite estimar las tareas. |
-| Pequeña | Sí | Se concentra exclusivamente en crear una convocatoria. |
-| Verificable | Sí | Los criterios de aceptación permiten comprobar su funcionamiento. |
+| Independiente	| Sí | Puede desarrollarse independientemente de otras funcionalidades de gestión de entrevistas. |
+| Negociable | Sí | La forma de registrar y mostrar el resultado puede acordarse. |
+| Valiosa |	Sí | Permite a la empresa realizar el seguimiento del proceso de selección. |
+| Estimable	| Sí | El alcance se limita al registro y actualización del resultado de la entrevista. |
+| Pequeña |	Sí | Se centra en registrar el resultado de una entrevista. |
+| Verificable | Sí	| Se puede comprobar que el resultado queda correctamente registrado y asociado a la entrevista. |
 
 ---
 
-## HU-10 — Editar convocatoria
+## HU-10 — Administrador gestiona usuarios y permisos
+
 | Campo | Detalle |
 |-------|---------|
-| Historia | Como empresa, quiero editar una convocatoria para mantener actualizada la información publicada. |
+| Historia | Como administrador, quiero gestionar usuarios y permisos para garantizar la seguridad del sistema. |
+| Módulo | Usuario |
+| Requisitos relacionados | RF-04, RF-05, RF-08 |
+
+### Criterios de aceptación
+
+1. El administrador debe haber iniciado sesión.
+2. El sistema debe permitir consultar los usuarios registrados.
+3. El administrador debe poder gestionar los roles o permisos correspondientes.
+4. Los permisos deben aplicarse de acuerdo con el rol asignado.
+5. Los usuarios sin permisos administrativos no deben poder acceder a las funciones de administración.
+6. Los cambios realizados deben quedar registrados correctamente.
+7. El sistema debe informar si la gestión de usuarios se realizó correctamente.
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente |	Sí | Puede desarrollarse como una funcionalidad de administración de usuarios y permisos. |
+| Negociable | Sí |	La forma de gestionar los roles y permisos puede acordarse. |
+| Valiosa |	Sí | Permite controlar el acceso a las diferentes funcionalidades del sistema. |
+| Estimable |	Sí | El alcance se limita a la gestión de usuarios, roles y permisos. |
+| Pequeña	| Sí | Se concentra en las funciones administrativas relacionadas con usuarios. |
+| Verificable |	Sí | Se puede comprobar que los permisos se asignan correctamente y que las restricciones se cumplen. |
+
+---
+
+## HU-11 — Administrador genera reportes
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como administrador, quiero generar reportes de convocatorias y entrevistas para analizar los resultados del proceso de selección. |
+| Módulo | Usuario |
+| Requisitos relacionados | RF-23 |
+
+### Criterios de aceptación
+
+1. El administrador debe haber iniciado sesión.
+2. El sistema debe permitir seleccionar el tipo de información que se desea consultar.
+3. El administrador debe poder aplicar filtros según la información seleccionada.
+4. El sistema debe mostrar los datos correspondientes a los registros existentes.
+5. La información mostrada en el reporte debe coincidir con los datos almacenados en el sistema.
+6. El sistema debe permitir consultar el reporte generado.
+7. Si no existen datos para los filtros seleccionados, el sistema debe informar dicha situación.
+
+
+### Validación INVEST
+
+| Criterio | ¿Se cumple? | Observación |
+|----------|-------------|-------------|
+| Independiente |	Sí | Puede desarrollarse como una funcionalidad de consulta y generación de reportes. |
+| Negociable | Sí |	Los tipos de reportes y filtros pueden acordarse durante el desarrollo. |
+| Valiosa |	Sí | Permite al administrador analizar la información de convocatorias y entrevistas. |
+| Estimable |	Sí | El alcance se limita a la generación y consulta de reportes. |
+| Pequeña |	Sí | Se concentra en generar reportes a partir de información existente. |
+| Verificable	| Sí | Se puede comprobar que los reportes muestran correctamente la información almacenada. |
+
+---
+
+## HU-12 — Usuario consulta estado de su postulación
+
+| Campo | Detalle |
+|-------|---------|
+| Historia | Como usuario, quiero consultar el estado de mi postulación para conocer el avance de mi proceso. |
 | Módulo | Convocatorias |
-| Requisitos relacionados | RF-00, RF-01 |
+| Requisitos relacionados | RF-18, RF-21 |
 
 ### Criterios de aceptación
 
-1. La empresa debe estar autenticada.
-2. Solo puede modificar convocatorias pertenecientes a ella.
-3. El sistema debe permitir modificar los campos habilitados.
-4. Los datos deben ser validados.
-5. Los cambios deben quedar guardados correctamente.
+1. El usuario debe haber iniciado sesión.
+2. El sistema debe mostrar únicamente las postulaciones realizadas por el usuario.
+3. El usuario debe poder consultar las convocatorias a las que se postuló.
+4. El sistema debe mostrar el estado actual de cada postulación.
+5. Si existe una entrevista asociada, el sistema debe mostrar su información correspondiente.
+6. Si existe un resultado registrado, el sistema debe permitir consultarlo cuando se encuentre habilitado.
+7. La información mostrada debe corresponder a los datos registrados en el sistema.
 
 
 ### Validación INVEST
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Puede implementarse independientemente de la creación de nuevas convocatorias. |
-| Negociable | Sí | Los campos que podrán modificarse pueden definirse durante el desarrollo. |
-| Valiosa | Sí | Permite mantener actualizada la información de las búsquedas. |
-| Estimable | Sí | El alcance y las tareas necesarias están definidos. |
-| Pequeña | Sí | Se limita a modificar una convocatoria existente. |
-| Verificable | Sí | Se puede comprobar que los cambios se validan y guardan correctamente. |
-
----
-
-## HU-11 —  Cerrar convocatoria
-
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como empresa, quiero cerrar una convocatoria para impedir nuevas postulaciones cuando la búsqueda haya finalizado. |
-| Módulo | Convocatorias |
-| Requisitos relacionados | RF-00, RF-01 |
-
-### Criterios de aceptación
-
-1. La empresa debe estar autenticada.
-2. Debe seleccionar una convocatoria propia.
-3. El sistema debe solicitar confirmación.
-4. Al confirmar, la convocatoria debe cambiar a estado cerrada.
-5. Una convocatoria cerrada no debe permitir nuevas postulaciones.
-
-
-### Validación INVEST
-
-| Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Sí | Puede implementarse como una funcionalidad separada de la edición. |
-| Negociable | Sí | La forma de confirmación y las condiciones de cierre pueden acordarse. |
-| Valiosa | Sí | Permite impedir postulaciones cuando una búsqueda ya finalizó. |
-| Estimable | Sí | El alcance es concreto y permite estimar el trabajo. |
-| Pequeña | Sí | Se concentra en una única acción: cerrar una convocatoria. |
-| Verificable | Sí | Se puede comprobar que cambia el estado y que ya no acepta postulaciones. |
-
----
-
-## HU-12 — Ver postulantes
-| Campo | Detalle |
-|-------|---------|
-| Historia | Como empresa, quiero visualizar los postulantes de una convocatoria para evaluar los perfiles recibidos. |
-| Módulo | Convocatorias |
-| Requisitos relacionados | RF-00, RF-01 |
-
-### Criterios de aceptación
-
-1. La empresa debe estar autenticada.
-2. Debe seleccionar una convocatoria propia.
-3. El sistema debe mostrar los postulantes correspondientes.
-4. La empresa debe poder consultar los datos necesarios para evaluar el perfil.
-5. La empresa debe poder consultar el CV del postulante.
-
-### Validación INVEST
-
-| Criterio | ¿Se cumple? | Observación |
-|----------|-------------|-------------|
-| Independiente | Sí | Puede desarrollarse como una funcionalidad independiente para la empresa. |
-| Negociable | Sí | Se puede acordar qué información del postulante será visible. |
-| Valiosa | Sí | Permite a la empresa analizar los perfiles que se postularon. |
-| Estimable | Sí | El alcance está definido y las tareas son identificables. |
-| Pequeña | Sí | Se limita a consultar los postulantes de una convocatoria. |
-| Verificable | Sí | Los criterios permiten comprobar que se muestran los postulantes correctos y sus CV. |
-
----
+| Independiente	| Sí | Puede desarrollarse como una consulta del estado de las postulaciones del usuario. |
+| Negociable | Sí	| La forma de mostrar los estados y resultados puede acordarse. |
+| Valiosa	| Sí | Permite al usuario conocer el avance de su proceso de selección. |
+| Estimable |	Sí | El alcance se limita a consultar el estado, entrevistas y resultados de sus postulaciones. |
+| Pequeña |	Sí | Se centra en visualizar la información relacionada con las postulaciones del usuario. |
+| Verificable |	Sí | Se puede comprobar que el usuario visualiza correctamente el estado y la información correspondiente a sus postulaciones. |
