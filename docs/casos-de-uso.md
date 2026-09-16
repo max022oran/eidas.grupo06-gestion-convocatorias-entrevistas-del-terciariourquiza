@@ -33,7 +33,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-01 — [Ver convocatorias]
+## CU-01 — Ver convocatorias
 
 | Campo | Detalle |
 |-------|---------|
@@ -68,7 +68,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-02 — [Postularse a convocatoria]
+## CU-02 — Postularse a convocatoria
 
 | Campo | Detalle |
 |-------|---------|
@@ -105,7 +105,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-03 — [Ver resultado]
+## CU-03 — Ver resultado
 
 | Campo | Detalle |
 |-------|---------|
@@ -140,7 +140,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-04 — [Crear convocatoria]
+## CU-04 — Crear convocatoria
 
 | Campo | Detalle |
 |-------|---------|
@@ -177,7 +177,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-05 — [Ver postulantes]
+## CU-05 — Ver postulantes
 
 | Campo | Detalle |
 |-------|---------|
@@ -213,7 +213,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-06 — [Entrevistar postulantes]
+## CU-06 — Entrevistar postulantes
 
 | Campo | Detalle |
 |-------|---------|
@@ -251,7 +251,7 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-07 - [Cargar resultado]
+## CU-07 - Cargar resultado
 
 | Campo | Detalle |
 |-------|---------|
