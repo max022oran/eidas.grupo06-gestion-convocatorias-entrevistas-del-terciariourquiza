@@ -103,4 +103,70 @@ Crear convocatoria → extiende → Ver postulantes.
 | Importancia | Alta |
 | Urgencia | Alta |
 
-## CU-03 — [Postularse a convocatoria]
+## CU-03 — [Ver resultado]
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-03 |
+| Nombre | Ver resultado |
+| Descripción | Permite al usuario consultar el resultado de sus postulaciones una vez que haya sido registrado y habilitado para su consulta. |
+| Actores | Principal: Usuario / Secundario: Sistema |
+| Precondiciones | El usuario debe estar registrado y debe tener al menos una postulación registrada. |
+| Postcondiciones | Éxito: El usuario visualiza el resultado de su postulación. / Fallo: El sistema informa que el resultado aún no se encuentra disponible. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El usuario ingresa a sus postulaciones. | El sistema muestra las postulaciones realizadas por el usuario. |
+| 2 | El usuario selecciona una postulación. | El sistema consulta el estado y resultado registrados. |
+| 3 | El usuario solicita consultar el resultado. | El sistema muestra el resultado disponible. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | La postulación no tiene un resultado registrado. | El sistema informa que el resultado aún no se encuentra disponible. |
+| E2 | El usuario intenta consultar una postulación que no le pertenece. | El sistema impide el acceso a la información. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento | El resultado debe mostrarse en un tiempo adecuado. |
+| Frecuencia | Media |
+| Importancia | Alta |
+| Urgencia | Media |
+
+## CU-04 — [Crear convocatoria]
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-04 |
+| Nombre | Crear convocatoria |
+| Descripción | Permite a la empresa registrar una nueva convocatoria laboral en el sistema. |
+| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
+| Precondiciones | El actor debe estar autenticado y contar con permisos para gestionar convocatorias. |
+| Postcondiciones | Éxito: La convocatoria queda registrada y disponible según su vigencia. / Fallo: La convocatoria no se registra y el sistema informa los errores encontrados. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador/empresa selecciona la opción para crear una convocatoria. | El sistema muestra el formulario de creación. |
+| 2 | El actor completa los campos obligatorios. | El sistema valida los datos ingresados. |
+| 3 | El actor confirma la creación. | El sistema verifica que la información sea válida y registra la convocatoria. |
+| 4 | El actor finaliza la operación. | El sistema informa que la convocatoria fue creada correctamente. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | Faltan campos obligatorios. | El sistema solicita completar la información faltante. |
+| E2 | La fecha de vencimiento es anterior o igual a la fecha de publicación. | El sistema informa que las fechas ingresadas no son válidas. |
+| E3 | Los datos ingresados no cumplen con las validaciones. | El sistema informa los errores y solicita corregirlos. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento | La convocatoria debe registrarse inmediatamente después de una validación exitosa. |
+| Frecuencia | Media |
+| Importancia | Alta |
+| Urgencia | Alta |
