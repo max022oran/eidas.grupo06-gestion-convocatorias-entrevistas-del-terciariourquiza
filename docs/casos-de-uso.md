@@ -103,6 +103,8 @@ Crear convocatoria → extiende → Ver postulantes.
 | Importancia | Alta |
 | Urgencia | Alta |
 
+---
+
 ## CU-03 — [Ver resultado]
 
 | Campo | Detalle |
@@ -135,6 +137,8 @@ Crear convocatoria → extiende → Ver postulantes.
 | Frecuencia | Media |
 | Importancia | Alta |
 | Urgencia | Media |
+
+---
 
 ## CU-04 — [Crear convocatoria]
 
@@ -170,3 +174,115 @@ Crear convocatoria → extiende → Ver postulantes.
 | Frecuencia | Media |
 | Importancia | Alta |
 | Urgencia | Alta |
+
+---
+
+## CU-05 — [Ver postulantes]
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-05 |
+| Nombre | Ver postulantes |
+| Descripción | Permite a la empresa consultar los usuarios que se postularon a sus convocatorias. |
+| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
+| Precondiciones | El actor debe estar autenticado y debe existir al menos una convocatoria con postulantes. |
+| Postcondiciones | Éxito: El actor visualiza los postulantes de la convocatoria seleccionada. / Fallo: El sistema informa que no existen postulantes. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador/empresa selecciona una de sus convocatorias. | El sistema muestra la información de la convocatoria. |
+| 2 | El actor selecciona la opción para ver postulantes. | El sistema consulta las postulaciones asociadas. |
+| 3 | El actor consulta la lista de postulantes. | El sistema muestra los postulantes registrados. |
+| 4 | El actor selecciona un postulante. | El sistema muestra la información disponible del postulante y su CV. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | La convocatoria no tiene postulantes. | El sistema informa que no existen postulantes registrados. |
+| E2 | El actor intenta consultar una convocatoria perteneciente a otra empresa. | El sistema impide el acceso a la información. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento | La lista de postulantes debe mostrarse en un tiempo adecuado. |
+| Frecuencia | Alta |
+| Importancia | Alta |
+| Urgencia | Media |
+
+---
+
+## CU-06 — [Entrevistar postulantes]
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-06 |
+| Nombre | Entrevistar postulantes |
+| Descripción | Permite a la empresa gestionar las entrevistas de los postulantes seleccionados durante el proceso de selección. |
+| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
+| Precondiciones | El actor debe estar autenticado, debe existir una convocatoria y debe existir al menos un postulante registrado. |
+| Postcondiciones | Éxito: La entrevista queda registrada y asociada al postulante. / Fallo: La entrevista no se registra y el sistema informa el motivo. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador/empresa selecciona un postulante. | El sistema muestra la información disponible del postulante. |
+| 2 | El actor selecciona la opción para programar una entrevista. | El sistema muestra el formulario de entrevista. |
+| 3 | El actor ingresa fecha, hora y modalidad. | El sistema valida los datos ingresados. |
+| 4 | El actor confirma la entrevista. | El sistema registra la entrevista y la asocia con la postulación. |
+| 5 | El actor finaliza la operación. | El sistema informa que la entrevista fue registrada correctamente. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existe una postulación asociada al postulante. | El sistema impide registrar la entrevista. |
+| E2 | No se completan los datos obligatorios de la entrevista. | El sistema solicita completar la información faltante. |
+| E3 | La fecha u horario ingresado no es válido. | El sistema informa el error y solicita corregir los datos. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| La entrevista debe registrarse inmediatamente después de confirmar los datos. |
+| Frecuencia | Media |
+| Importancia	| Alta |
+| Urgencia | Alta |
+
+---
+
+## CU-07 - [Cargar resultado]
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-07 |
+| Nombre | Cargar resultado |
+| Descripción | Permite a la empresa registrar el resultado obtenido por un postulante luego de una entrevista. |
+| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
+| Precondiciones | El actor debe estar autenticado y debe existir una entrevista registrada para el postulante. |
+| Postcondiciones | Éxito: El resultado queda registrado y asociado a la entrevista y postulación. / Fallo: El resultado no se registra y el sistema informa el error. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador/empresa selecciona una entrevista realizada. | El sistema muestra la información de la entrevista y del postulante. |
+| 2 | El actor selecciona la opción para cargar el resultado. | El sistema muestra el formulario correspondiente. |
+| 3 | El actor ingresa el resultado de la entrevista. | El sistema valida la información ingresada. |
+| 4 | El actor confirma el resultado. | El sistema registra el resultado y lo asocia a la entrevista y postulación. |
+| 5 | El actor finaliza la operación. | El sistema informa que el resultado fue registrado correctamente. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existe una entrevista registrada. | El sistema impide cargar el resultado. |
+| E2 | No se completa el resultado. | El sistema solicita completar la información requerida. |
+| E3 | El resultado no puede asociarse a la postulación correspondiente. | El sistema informa el error y no guarda la información. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| El resultado debe registrarse inmediatamente después de su confirmación. |
+| Frecuencia | Media |
+| Importancia	| Alta |
+| Urgencia | Media |
