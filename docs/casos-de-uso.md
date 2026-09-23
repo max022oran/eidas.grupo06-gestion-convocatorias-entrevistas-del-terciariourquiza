@@ -257,38 +257,147 @@ Consultar estado de su postulación → extiende → Ver resultado.
 
 ---
 
-## CU-07 - Cargar resultado
+## CU-07 - Ver postulantes
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-07 |
-| Nombre | Cargar resultado |
-| Descripción | Permite a la empresa registrar el resultado obtenido por un postulante luego de una entrevista. |
-| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
-| Precondiciones | El actor debe estar autenticado y debe existir una entrevista registrada para el postulante. |
-| Postcondiciones | Éxito: El resultado queda registrado y asociado a la entrevista y postulación. / Fallo: El resultado no se registra y el sistema informa el error. |
+| Nombre | Ver postulantes |
+| Descripción | Permite a la empresa consultar los usuarios que se postularon a sus convocatorias. |
+| Actores | Principal: Empresa |
+| Precondiciones | La empresa debe estar autenticada y debe existir una convocatoria con postulantes. |
+| Postcondiciones | Éxito: La empresa visualiza los postulantes. / Fallo: El sistema informa que no existen postulantes. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El administrador/empresa selecciona una entrevista realizada. | El sistema muestra la información de la entrevista y del postulante. |
-| 2 | El actor selecciona la opción para cargar el resultado. | El sistema muestra el formulario correspondiente. |
-| 3 | El actor ingresa el resultado de la entrevista. | El sistema valida la información ingresada. |
-| 4 | El actor confirma el resultado. | El sistema registra el resultado y lo asocia a la entrevista y postulación. |
-| 5 | El actor finaliza la operación. | El sistema informa que el resultado fue registrado correctamente. |
+| 1 | La empresa selecciona una convocatoria. | El sistema muestra la información de la convocatoria. |
+| 2 | La empresa solicita ver los postulantes. | El sistema consulta las postulaciones asociadas. |
+| 3 | La empresa consulta la lista. | El sistema muestra los postulantes registrados. |
+| 4 | La empresa selecciona un postulante. | El sistema muestra la información disponible del postulante y su CV. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | No existe una entrevista registrada. | El sistema impide cargar el resultado. |
-| E2 | No se completa el resultado. | El sistema solicita completar la información requerida. |
-| E3 | El resultado no puede asociarse a la postulación correspondiente. | El sistema informa el error y no guarda la información. |
+| E1 | La convocatoria no tiene postulantes. | El sistema informa que no existen postulantes. |
+| E2 | La empresa intenta consultar una convocatoria ajena. | El sistema impide el acceso. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento	| El resultado debe registrarse inmediatamente después de su confirmación. |
+| Rendimiento	| La lista debe mostrarse en un tiempo adecuado. |
+| Frecuencia | Alta |
+| Importancia	| Alta |
+| Urgencia | Media |
+
+---
+
+## CU-08 - Entrevistar postulantes
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-08 |
+| Nombre | Entrevistar postulantes |
+| Descripción | Permite a la empresa gestionar las entrevistas de los postulantes seleccionados. |
+| Principal: Empresa |
+| Precondiciones | Debe existir una convocatoria y un postulante registrado. |
+| Postcondiciones | Éxito: La entrevista queda registrada. / Fallo: La entrevista no se registra. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | La empresa selecciona un postulante. | El sistema muestra su información. |
+| 2 | La empresa selecciona la opción de entrevista. | El sistema muestra los datos necesarios para registrar la entrevista. |
+| 3 | La empresa ingresa fecha, hora y modalidad. | El sistema valida los datos. |
+| 4 | La empresa confirma la entrevista. | El sistema registra la entrevista asociada a la postulación. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existe una postulación. | El sistema impide registrar la entrevista. |
+| E2 | Faltan datos de la entrevista. | El sistema solicita completar la información. |
+| E3 | La fecha u horario no es válido. | El sistema informa el error. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| La entrevista debe registrarse inmediatamente después de la confirmación. |
+| Frecuencia | Media |
+| Importancia	| Alta |
+| Urgencia | Alta |
+
+---
+
+## CU-09 - Cargar resultado
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-09 |
+| Nombre | Cargar resultado |
+| Descripción | Permite a la empresa registrar el resultado obtenido por un postulante luego de una entrevista. |
+| Principal: Empresa |
+| Precondiciones | Debe existir una entrevista registrada para el postulante. |
+| Postcondiciones | Éxito: El resultado queda registrado y asociado a la entrevista y postulación. / Fallo: El sistema informa el error. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | La empresa selecciona una entrevista. | El sistema muestra la información correspondiente. |
+| 2 | La empresa selecciona la opción para cargar el resultado. | El sistema muestra el formulario. |
+| 3 | La empresa ingresa el resultado. | El sistema valida la información. |
+| 4 | La empresa confirma el resultado. | El sistema registra el resultado. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existe una entrevista. | El sistema impide cargar el resultado. |
+| E2 | No se completa el resultado. | El sistema solicita completar la información. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| El resultado debe registrarse inmediatamente después de la confirmación. |
 | Frecuencia | Media |
 | Importancia	| Alta |
 | Urgencia | Media |
+
+---
+
+## CU-10 - Gestionar usuarios y permisos
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-10 |
+| Nombre | Gestionar usuarios y permisos |
+| Descripción | Permite al administrador consultar y gestionar los usuarios, roles y permisos del sistema. |
+| Principal: Administrador |
+| Precondiciones | El administrador debe estar autenticado y contar con permisos administrativos. |
+| Postcondiciones | Éxito: Los cambios en usuarios y permisos quedan registrados. / Fallo: El sistema informa el error. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador ingresa a la gestión de usuarios. | El sistema muestra los usuarios registrados. |
+| 2 | El administrador selecciona un usuario. | El sistema muestra la información disponible. |
+| 3 | El administrador modifica el rol o permiso correspondiente. | El sistema valida los cambios.|
+| 4 | El administrador confirma la operación. | El sistema guarda los cambios. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | El administrador no tiene permisos suficientes. | El sistema impide realizar la operación. |
+| E2 | Los datos ingresados no son válidos. | El sistema informa el error. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| Los cambios deben registrarse inmediatamente después de la confirmación. |
+| Frecuencia | Media |
+| Importancia	| Alta |
+| Urgencia | Alta |
+
+---
