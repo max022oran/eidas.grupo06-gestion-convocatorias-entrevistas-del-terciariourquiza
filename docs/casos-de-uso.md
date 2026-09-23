@@ -5,8 +5,6 @@
 _Incluir el código PlantUML en `diagramas/casos-de-uso.puml`._
 _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 
-<img width="429" height="654" alt="image" src="https://github.com/user-attachments/assets/ff2ea0f7-4a6a-4008-a702-a681574bd9ee" />
-
 _Describir brevemente los actores identificados y las relaciones principales (include, extend)._
 
 1. Usuario
