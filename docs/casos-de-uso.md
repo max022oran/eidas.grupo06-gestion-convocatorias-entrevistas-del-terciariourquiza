@@ -401,3 +401,72 @@ Consultar estado de su postulación → extiende → Ver resultado.
 | Urgencia | Alta |
 
 ---
+
+## CU-11 - Generar reportes
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-11 |
+| Nombre | Generar reportes |
+| Descripción | Permite al administrador generar reportes a partir de la información registrada en el sistema. |
+| Principal: Administrador |
+| Precondiciones | El administrador debe estar autenticado y deben existir datos registrados. |
+| Postcondiciones | Éxito: El sistema genera el reporte solicitado. / Fallo: El sistema informa que no existen datos para generar el reporte. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador ingresa a la sección de reportes. | El sistema muestra las opciones disponibles. |
+| 2 | El administrador selecciona el tipo de reporte. | El sistema muestra los filtros correspondientes. |
+| 3 | El administrador aplica los filtros. | El sistema procesa la información. |
+| 4 | El administrador solicita generar el reporte. | El sistema genera y muestra el reporte. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existen datos para los filtros seleccionados. | El sistema informa que no hay información disponible. |
+| E2 | Los filtros ingresados no son válidos. | El sistema solicita corregir los datos. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| El reporte debe generarse en un tiempo adecuado. |
+| Frecuencia | Media |
+| Importancia	| Media |
+| Urgencia | Media |
+
+---
+
+## CU-12 - Ver resultados
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-12 |
+| Nombre | Ver resultados |
+| Descripción | Permite al administrador consultar los resultados registrados de los procesos de selección. |
+| Principal: Administrador |
+| Precondiciones | El administrador debe estar autenticado y deben existir resultados registrados. |
+| Postcondiciones | Éxito: El administrador visualiza los resultados. / Fallo: El sistema informa que no existen resultados disponibles. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | El administrador ingresa a la sección de resultados. | El sistema consulta los resultados registrados. |
+| 2 | El administrador solicita visualizar los resultados. | El sistema muestra los resultados disponibles. |
+| 3 | El administrador selecciona un resultado. | El sistema muestra la información correspondiente. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | No existen resultados registrados. | El sistema informa que no hay resultados disponibles. |
+| E2 | Se produce un error al consultar la información. | El sistema informa que no fue posible obtener los resultados. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| Los resultados deben mostrarse en un tiempo adecuado. |
+| Frecuencia | Media |
+| Importancia	| Alta |
+| Urgencia | Media |
