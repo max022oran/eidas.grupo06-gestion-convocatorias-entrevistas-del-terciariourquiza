@@ -7,27 +7,37 @@ _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 
 _Describir brevemente los actores identificados y las relaciones principales (include, extend)._
 
-1. Usuario
+1. Usuario:
 Es el postulante que utiliza el sistema para consultar las convocatorias disponibles y participar en los procesos de selección. Sus principales acciones son:
 Ver convocatorias.
 Postularse a una convocatoria.
 Ver resultado de su postulación.
+Consultar estado de su postulación.
+Cargar CV.
 
-2. Administrador / Empresa
-Es el actor encargado de gestionar las convocatorias y realizar el proceso de selección de los postulantes. Sus principales acciones son:
-Crear convocatoria.
+2. Empresa:
+Es el actor encargado de gestionar sus convocatorias y llevar adelante el proceso de selección de los postulantes. Sus principales acciones son:
+Crear, editar o cerrar convocatoria.
 Ver postulantes.
 Entrevistar postulantes.
 Cargar resultado de las entrevistas.
 
+3. Administrador:
+Es el actor encargado de administrar los usuarios y supervisar la información general del sistema. Sus principales acciones son:
+Gestionar usuarios y permisos.
+Generar reportes.
+Ver resultados.
+
 <<include>>
 Ver convocatorias → incluye → Postularse a convocatoria.
 Postularse a convocatoria → incluye → Ver resultado.
+Editar o cerrar convocatoria → incluye → Ver postulantes.
 Ver postulantes → incluye → Entrevistar postulantes.
 Entrevistar postulantes → incluye → Cargar resultado.
 
 <<extend>>
-Crear convocatoria → extiende → Ver postulantes.
+Crear, editar o cerrar convocatoria → extiende → Ver postulantes.
+Consultar estado de su postulación → extiende → Ver resultado.
 
 ---
 
@@ -38,7 +48,7 @@ Crear convocatoria → extiende → Ver postulantes.
 | Identificador | CU-01 |
 | Nombre | Ver convocatorias |
 | Descripción | Permite al usuario consultar las convocatorias laborales disponibles en el sistema. |
-| Actores | Principal: Usuario / Secundario: Sistema |
+| Actores | Principal: Usuario/Postulante |
 | Precondiciones | El sistema debe estar disponible y deben existir convocatorias registradas. |
 | Postcondiciones | Éxito: El usuario visualiza las convocatorias disponibles. / Fallo: El sistema informa que no existen convocatorias disponibles. |
 
@@ -73,7 +83,7 @@ Crear convocatoria → extiende → Ver postulantes.
 | Identificador | CU-02 |
 | Nombre | Postularse a convocatoria |
 | Descripción | Permite al usuario enviar su postulación a una convocatoria laboral vigente. |
-| Actores | Principal: Usuario / Secundario: Sistema |
+| Actores | Principal: Usuario/Postulante |
 | Precondiciones | El usuario debe estar registrado y autenticado, tener un CV cargado y la convocatoria debe estar vigente. |
 | Postcondiciones | Éxito: La postulación queda registrada. / Fallo: El sistema informa el motivo por el cual no puede realizarse la postulación. |
 
@@ -110,7 +120,7 @@ Crear convocatoria → extiende → Ver postulantes.
 | Identificador | CU-03 |
 | Nombre | Ver resultado |
 | Descripción | Permite al usuario consultar el resultado de sus postulaciones una vez que haya sido registrado y habilitado para su consulta. |
-| Actores | Principal: Usuario / Secundario: Sistema |
+| Actores | Principal: Usuario/Postulante |
 | Precondiciones | El usuario debe estar registrado y debe tener al menos una postulación registrada. |
 | Postcondiciones | Éxito: El usuario visualiza el resultado de su postulación. / Fallo: El sistema informa que el resultado aún no se encuentra disponible. |
 
@@ -138,112 +148,110 @@ Crear convocatoria → extiende → Ver postulantes.
 
 ---
 
-## CU-04 — Crear convocatoria
+## CU-04 — Consultar estado de su postulación
 
 | Campo | Detalle |
 |-------|---------|
 | Identificador | CU-04 |
-| Nombre | Crear convocatoria |
-| Descripción | Permite a la empresa registrar una nueva convocatoria laboral en el sistema. |
-| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
-| Precondiciones | El actor debe estar autenticado y contar con permisos para gestionar convocatorias. |
-| Postcondiciones | Éxito: La convocatoria queda registrada y disponible según su vigencia. / Fallo: La convocatoria no se registra y el sistema informa los errores encontrados. |
+| Nombre | Consultar estado de su postulación |
+| Descripción | Permite al usuario consultar el estado actual de sus postulaciones. |
+| Actores | Principal: Usuario/Postulante |
+| Precondiciones | El usuario debe estar registrado y tener al menos una postulación. |
+| Postcondiciones | Éxito: El usuario visualiza el estado de su postulación. / Fallo: El sistema informa que no existen postulaciones para consultar. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El administrador/empresa selecciona la opción para crear una convocatoria. | El sistema muestra el formulario de creación. |
-| 2 | El actor completa los campos obligatorios. | El sistema valida los datos ingresados. |
-| 3 | El actor confirma la creación. | El sistema verifica que la información sea válida y registra la convocatoria. |
-| 4 | El actor finaliza la operación. | El sistema informa que la convocatoria fue creada correctamente. |
+| 1 | El usuario ingresa a la sección de sus postulaciones. | El sistema consulta sus postulaciones. |
+| 2 | El usuario selecciona una postulación. | El sistema consulta su estado actual. |
+| 3 | El usuario solicita consultar el estado. | El sistema muestra el estado correspondiente. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | Faltan campos obligatorios. | El sistema solicita completar la información faltante. |
-| E2 | La fecha de vencimiento es anterior o igual a la fecha de publicación. | El sistema informa que las fechas ingresadas no son válidas. |
-| E3 | Los datos ingresados no cumplen con las validaciones. | El sistema informa los errores y solicita corregirlos. |
+| E1 | El usuario no posee postulaciones. | El sistema informa que no existen postulaciones registradas. |
+| E2 | No se puede consultar el estado. | El sistema informa que la información no está disponible. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | La convocatoria debe registrarse inmediatamente después de una validación exitosa. |
-| Frecuencia | Media |
-| Importancia | Alta |
-| Urgencia | Alta |
-
----
-
-## CU-05 — Ver postulantes
-
-| Campo | Detalle |
-|-------|---------|
-| Identificador | CU-05 |
-| Nombre | Ver postulantes |
-| Descripción | Permite a la empresa consultar los usuarios que se postularon a sus convocatorias. |
-| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
-| Precondiciones | El actor debe estar autenticado y debe existir al menos una convocatoria con postulantes. |
-| Postcondiciones | Éxito: El actor visualiza los postulantes de la convocatoria seleccionada. / Fallo: El sistema informa que no existen postulantes. |
-
-### Secuencia normal
-
-| # | Acción (actor) | Reacción (sistema) |
-|---|----------------|--------------------|
-| 1 | El administrador/empresa selecciona una de sus convocatorias. | El sistema muestra la información de la convocatoria. |
-| 2 | El actor selecciona la opción para ver postulantes. | El sistema consulta las postulaciones asociadas. |
-| 3 | El actor consulta la lista de postulantes. | El sistema muestra los postulantes registrados. |
-| 4 | El actor selecciona un postulante. | El sistema muestra la información disponible del postulante y su CV. |
-
-### Excepciones
-
-| # | Situación | Respuesta del sistema |
-|---|-----------|-----------------------|
-| E1 | La convocatoria no tiene postulantes. | El sistema informa que no existen postulantes registrados. |
-| E2 | El actor intenta consultar una convocatoria perteneciente a otra empresa. | El sistema impide el acceso a la información. |
-
-| Campo | Detalle |
-|-------|---------|
-| Rendimiento | La lista de postulantes debe mostrarse en un tiempo adecuado. |
+| Rendimiento | El estado debe mostrarse rápidamente. |
 | Frecuencia | Alta |
 | Importancia | Alta |
 | Urgencia | Media |
 
 ---
 
-## CU-06 — Entrevistar postulantes
+## CU-05 — Cargar CV
 
 | Campo | Detalle |
 |-------|---------|
-| Identificador | CU-06 |
-| Nombre | Entrevistar postulantes |
-| Descripción | Permite a la empresa gestionar las entrevistas de los postulantes seleccionados durante el proceso de selección. |
-| Actores | Principal: Administrador/Empresa / Secundario: Sistema |
-| Precondiciones | El actor debe estar autenticado, debe existir una convocatoria y debe existir al menos un postulante registrado. |
-| Postcondiciones | Éxito: La entrevista queda registrada y asociada al postulante. / Fallo: La entrevista no se registra y el sistema informa el motivo. |
+| Identificador | CU-05 |
+| Nombre | Cargar CV |
+| Descripción | Permite al usuario cargar y almacenar su currículum vitae para utilizarlo durante el proceso de postulación. |
+| Actores | Principal: Usuario/Postulante |
+| Precondiciones | El usuario debe estar registrado y autenticado. |
+| Postcondiciones | Éxito: El CV queda almacenado y asociado al usuario. / Fallo: El sistema informa el error de carga. |
 
 ### Secuencia normal
 
 | # | Acción (actor) | Reacción (sistema) |
 |---|----------------|--------------------|
-| 1 | El administrador/empresa selecciona un postulante. | El sistema muestra la información disponible del postulante. |
-| 2 | El actor selecciona la opción para programar una entrevista. | El sistema muestra el formulario de entrevista. |
-| 3 | El actor ingresa fecha, hora y modalidad. | El sistema valida los datos ingresados. |
-| 4 | El actor confirma la entrevista. | El sistema registra la entrevista y la asocia con la postulación. |
-| 5 | El actor finaliza la operación. | El sistema informa que la entrevista fue registrada correctamente. |
+| 1 | El usuario ingresa a la sección de CV. | El sistema muestra la opción para cargar el archivo. |
+| 2 | El usuario selecciona su CV. | El sistema verifica el archivo. |
+| 3 | El usuario confirma la carga. | El sistema almacena el CV y lo asocia a su cuenta. |
+| 4 | El usuario finaliza la operación. | El sistema informa que el CV fue cargado correctamente. |
 
 ### Excepciones
 
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
-| E1 | No existe una postulación asociada al postulante. | El sistema impide registrar la entrevista. |
-| E2 | No se completan los datos obligatorios de la entrevista. | El sistema solicita completar la información faltante. |
-| E3 | La fecha u horario ingresado no es válido. | El sistema informa el error y solicita corregir los datos. |
+| E1 | El archivo no tiene un formato permitido. | El sistema informa que el formato no es válido. |
+| E2 | No se seleccionó ningún archivo. | El sistema solicita seleccionar un CV. |
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento	| La entrevista debe registrarse inmediatamente después de confirmar los datos. |
+| Rendimiento | El archivo debe almacenarse luego de una carga exitosa. |
 | Frecuencia | Media |
+| Importancia | Alta |
+| Urgencia | Media |
+
+---
+
+## CU-06 — Crear, editar o cerrar convocatoria
+
+| Campo | Detalle |
+|-------|---------|
+| Identificador | CU-06 |
+| Nombre | Crear, editar o cerrar convocatoria |
+| Descripción | Permite a la empresa crear nuevas convocatorias, modificar su información o cerrarlas. |
+| Actores | Principal: Empresa |
+| Precondiciones | La empresa debe estar autenticada y contar con permisos para gestionar sus convocatorias. |
+| Postcondiciones | Éxito: La convocatoria queda creada, modificada o cerrada. / Fallo: El sistema informa el error correspondiente. |
+
+### Secuencia normal
+
+| # | Acción (actor) | Reacción (sistema) |
+|---|----------------|--------------------|
+| 1 | La empresa ingresa a la gestión de convocatorias. | El sistema muestra sus convocatorias. |
+| 2 | La empresa selecciona crear o modificar una convocatoria. | El sistema muestra el formulario correspondiente. |
+| 3 | La empresa completa o modifica los datos. | El sistema valida la información. |
+| 4 | La empresa confirma la operación. | El sistema guarda los cambios. |
+| 5 | La empresa selecciona cerrar una convocatoria cuando corresponda. | El sistema cambia el estado de la convocatoria y evita nuevas postulaciones. |
+
+### Excepciones
+
+| # | Situación | Respuesta del sistema |
+|---|-----------|-----------------------|
+| E1 | Faltan datos obligatorios. | El sistema solicita completar los campos faltantes. |
+| E2 | Los datos ingresados no son válidos. | El sistema informa los errores. |
+| E3 | La empresa intenta modificar una convocatoria ajena. | El sistema impide la modificación. |
+
+| Campo | Detalle |
+|-------|---------|
+| Rendimiento	| Los cambios deben registrarse luego de una validación exitosa. |
+| Frecuencia | Alta |
 | Importancia	| Alta |
 | Urgencia | Alta |
 
