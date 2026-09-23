@@ -1,26 +1,103 @@
 @startuml
-title Diagrama de Casos de Uso - [Nombre del Sistema]
+title Diagrama de Casos de Uso - [Bolsa de trabajo]
 
 left to right direction
 
-' --- Actores ---
-actor "[Actor principal]" as A1
-actor "[Actor secundario]" as A2
+' ==========================================
+' ACTORES
+' ==========================================
 
-' --- Sistema ---
-rectangle "[Nombre del Sistema]" {
-  usecase "[Caso de uso 1]" as UC1
-  usecase "[Caso de uso 2]" as UC2
-  usecase "[Caso de uso 3]" as UC3
+actor "Usuario / Postulante" as Usuario
+actor "Empresa" as Empresa
+actor "Administrador" as Administrador
+
+
+' ==========================================
+' SISTEMA
+' ==========================================
+
+rectangle "Sistema de Bolsa de Trabajo" {
+
+    ' ======================================
+    ' CASOS DE USO - USUARIO
+    ' ======================================
+
+    usecase "Ver convocatorias" as UC1
+    usecase "Postularse a\nconvocatoria" as UC2
+    usecase "Ver resultado" as UC3
+    usecase "Consultar estado\nde su postulación" as UC4
+    usecase "Cargar CV" as UC5
+
+
+    ' ======================================
+    ' CASOS DE USO - EMPRESA
+    ' ======================================
+
+    usecase "Crear, editar o cerrar convocatoria" as UC6
+    usecase "Ver postulantes" as UC7
+    usecase "Entrevistar\npostulantes" as UC8
+    usecase "Cargar resultado" as UC9
+
+
+    ' ======================================
+    ' CASOS DE USO - ADMINISTRADOR
+    ' ======================================
+
+    usecase "Gestionar usuarios\ny permisos" as UC10
+    usecase "Generar reportes" as UC11
+    usecase "Ver resultados" as UC12
 }
 
-' --- Relaciones actor-caso de uso ---
-A1 --> UC1
-A1 --> UC2
-A2 --> UC3
 
-' --- Relaciones entre casos de uso ---
-' UC2 .> UC1 : <<include>>
-' UC3 .> UC1 : <<extend>>
+' ==========================================
+' RELACIONES CON USUARIO / POSTULANTE
+' ==========================================
+
+Usuario --> UC1
+Usuario --> UC2
+Usuario --> UC3
+Usuario --> UC4
+Usuario --> UC5
+
+
+' ==========================================
+' RELACIONES CON EMPRESA
+' ==========================================
+
+Empresa --> UC6
+Empresa --> UC7
+Empresa --> UC8
+Empresa --> UC9
+
+
+' ==========================================
+' RELACIONES CON ADMINISTRADOR
+' ==========================================
+
+Administrador --> UC10
+Administrador --> UC11
+Administrador --> UC12
+
+
+' ==========================================
+' RELACIONES INCLUDE
+' ==========================================
+
+UC1 ..> UC2 : <<include>>
+
+UC2 ..> UC3 : <<include>>
+
+UC7 ..> UC8 : <<include>>
+
+UC8 ..> UC9 : <<include>>
+
+
+' ==========================================
+' RELACIÓN EXTEND
+' ==========================================
+
+UC6 ..> UC7 : <<extend>>
+
+UC3 ..> UC4 : <<extend>>
 
 @enduml
