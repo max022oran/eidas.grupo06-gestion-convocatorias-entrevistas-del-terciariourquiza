@@ -4,7 +4,7 @@
 ## Administrador
 
 **Tipo:** Interno  
-**Por qué es clave:** Es el responsable de controlar y supervisar el funcionamiento de nuestro sistema, administra la información de los docentes y egresados, comprueba las convocatorias y gestiona los usuarios y sus permisos. Sin el administrador, no habría un control centralizado en la plataforma.
+**Por qué es clave:** Garantiza el control, la organización y la confiabilidad de la información dentro del sistema. Su presencia permite mantener la plataforma bajo supervisión y asegurar que los distintos actores puedan utilizarla de manera adecuada y segura.
 
 
 ---
@@ -12,7 +12,7 @@
 ## Empresa
 
 **Tipo:** Externo   
-**Por qué es clave:** La empresa es la que genera las oportunidades laborales que hacen funcionar la bolsa de trabajo, publica las convocatorias, define los requisitos de los puestos, controla los CV y consultan a los postulantes.
+**Por qué es clave:** Representa el vínculo entre la plataforma y el mercado laboral. Sin la participación de las empresas, el sistema no tendría las oportunidades laborales necesarias para cumplir con su propósito de conectar a estudiantes y egresados con posibles empleadores.
 
 
 ---
@@ -20,7 +20,7 @@
 ## Usuario/Postulante
 
 **Tipo:** Externo   
-**Por qué es clave:** Representan a la persona que busca y se postula a las oportunidades laborales. Ellos se registran en la plataforma, cargan su CV, pueden consultar alguna convocatoria, postularse a distintos puestos, consultar el estado y resultado de sus postulaciones y participar en entrevistas.
+**Por qué es clave:** Constituye uno de los principales destinatarios del sistema. Su participación es necesaria para que la plataforma pueda cumplir su objetivo de facilitar el acceso a oportunidades laborales y centralizar el proceso de postulación y seguimiento.
 
 
 
