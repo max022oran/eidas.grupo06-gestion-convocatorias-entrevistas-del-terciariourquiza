@@ -300,7 +300,7 @@ Consultar estado de su postulación → extiende → Ver resultado.
 | Identificador | CU-08 |
 | Nombre | Entrevistar postulantes |
 | Descripción | Permite a la empresa gestionar las entrevistas de los postulantes seleccionados. |
-| Principal: Empresa |
+| Actores | Principal: Empresa |
 | Precondiciones | Debe existir una convocatoria y un postulante registrado. |
 | Postcondiciones | Éxito: La entrevista queda registrada. / Fallo: La entrevista no se registra. |
 
@@ -336,8 +336,8 @@ Consultar estado de su postulación → extiende → Ver resultado.
 |-------|---------|
 | Identificador | CU-09 |
 | Nombre | Cargar resultado |
-| Descripción | Permite a la empresa registrar el resultado obtenido por un postulante luego de una entrevista. |
-| Principal: Empresa |
+| Descripción | Permite a la empresa registrar el resultado obtenido por un postulante luego de una entrevista |
+| Actores | Principal: Empresa |
 | Precondiciones | Debe existir una entrevista registrada para el postulante. |
 | Postcondiciones | Éxito: El resultado queda registrado y asociado a la entrevista y postulación. / Fallo: El sistema informa el error. |
 
@@ -373,7 +373,7 @@ Consultar estado de su postulación → extiende → Ver resultado.
 | Identificador | CU-10 |
 | Nombre | Gestionar usuarios y permisos |
 | Descripción | Permite al administrador consultar y gestionar los usuarios, roles y permisos del sistema. |
-| Principal: Administrador |
+| Actores | Principal: Administrador |
 | Precondiciones | El administrador debe estar autenticado y contar con permisos administrativos. |
 | Postcondiciones | Éxito: Los cambios en usuarios y permisos quedan registrados. / Fallo: El sistema informa el error. |
 
@@ -409,7 +409,7 @@ Consultar estado de su postulación → extiende → Ver resultado.
 | Identificador | CU-11 |
 | Nombre | Generar reportes |
 | Descripción | Permite al administrador generar reportes a partir de la información registrada en el sistema. |
-| Principal: Administrador |
+| Actores | Principal: Administrador |
 | Precondiciones | El administrador debe estar autenticado y deben existir datos registrados. |
 | Postcondiciones | Éxito: El sistema genera el reporte solicitado. / Fallo: El sistema informa que no existen datos para generar el reporte. |
 
@@ -445,7 +445,7 @@ Consultar estado de su postulación → extiende → Ver resultado.
 | Identificador | CU-12 |
 | Nombre | Ver resultados |
 | Descripción | Permite al administrador consultar los resultados registrados de los procesos de selección. |
-| Principal: Administrador |
+| Actores | Principal: Administrador |
 | Precondiciones | El administrador debe estar autenticado y deben existir resultados registrados. |
 | Postcondiciones | Éxito: El administrador visualiza los resultados. / Fallo: El sistema informa que no existen resultados disponibles. |
 
