@@ -1,31 +1,78 @@
 @startuml
-title Modelo Entidad-Relación - [Nombre del Sistema]
+title Sistema de Bolsa de trabajo
 
-' --- Entidades ---
-entity Entidad1 {
-  * id_entidad1 : integer <<PK>>
+' ======================================
+' ENTIDADES
+' ======================================
+
+entity "Empresa" as Empresa {
+  idEmpresa : Int
+  nombre : String
+  rubro : String
+  email : String
+  contraseña : String
   --
-  atributo1 : varchar
-  atributo2 : varchar
+  crearConvocatoria()
+  verPostulantes()
 }
 
-entity Entidad2 {
-  * id_entidad2 : integer <<PK>>
+entity "Usuario" as Usuario {
+  idUsuario : Int
+  nombre : String
+  apellido : String
+  email : String
+  contraseña : String
+  sexo : String
+  tipoUsuario : String
   --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+  iniciarSesion()
+  postularse()
+  verResultados()
 }
 
-entity Entidad3 {
-  * id_entidad3 : integer <<PK>>
+entity "Convocatoria" as Convocatoria {
+  idConvocatoria : Int
+  titulo : String
+  descripcion : String
+  puesto : String
+  ubicacion : String
+  requisitos : String
+  fechaInicio : Date
+  fechaFin : Date
+  estado : String
+  modalidad : String
+  linkExterno : String
   --
-  atributo1 : varchar
-  id_entidad1 : integer <<FK>>
+  linkExterno()
+  empresa()
 }
 
-' --- Relaciones ---
-' Sintaxis: EntidadA [cardinalidad] -- [cardinalidad] EntidadB : "etiqueta"
-Entidad1 ||--o{ Entidad2 : "relación"
-Entidad1 ||--o{ Entidad3 : "relación"
+entity "Postulacion" as Postulacion {
+  idPostulacion : Int
+  fecha : Int
+  estado : String
+  puntaje : Int
+  cv : String
+  --
+  registrar()
+}
+
+entity "Entrevista" as Entrevista {
+  idEntrevista : Int
+  fechaHora : Int
+  puntaje : Int
+  estado : String
+  --
+  evaluar()
+}
+
+' ======================================
+' RELACIONES
+' ======================================
+
+Empresa "1" -- "0..*" Convocatoria : publica
+Usuario "1" -- "0..*" Postulacion : realiza
+Convocatoria "1" -- "0..*" Postulacion : recibe
+Postulacion "1" -- "0..1" Entrevista : genera
 
 @enduml
