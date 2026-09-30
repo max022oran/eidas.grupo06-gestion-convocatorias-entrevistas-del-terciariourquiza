@@ -42,6 +42,7 @@ _Desarrollo de un sistema web que permite gestionar convocatorias, entrevistas y
 |----|-----------|
 |RF-21| La empresa debe poder programar entrevistas para los postulantes de sus convocatorias, indicando fecha, hora y modalidad. |
 |RF-22| El usuario debe poder consultar la información de las entrevistas asignadas a sus postulaciones. |
+|RF-23| El administrador debe poder generar reportes de convocatorias y entrevistas aplicando filtros según la información seleccionada. |
 
 ## Requisitos no funcionales
 
