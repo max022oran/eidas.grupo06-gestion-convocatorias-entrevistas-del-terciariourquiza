@@ -162,6 +162,7 @@ Ver resultados.
 |---|-----------|-----------------------|
 | E1 | El usuario no posee postulaciones. | El sistema informa que no existen postulaciones registradas. |
 | E2 | No se puede consultar el estado. | El sistema informa que la información no está disponible. |
+| E3 | La postulación seleccionada no pertenece al usuario. | El sistema impide el acceso a la información. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -198,6 +199,8 @@ Ver resultados.
 |---|-----------|-----------------------|
 | E1 | El archivo no tiene un formato permitido. | El sistema informa que el formato no es válido. |
 | E2 | No se seleccionó ningún archivo. | El sistema solicita seleccionar un CV. |
+| E3 | El archivo supera el tamaño máximo permitido. | El sistema informa que el archivo excede el tamaño permitido y solicita seleccionar otro archivo. |
+| E4 | El usuario ya tiene un CV cargado. | El sistema informa que existe un CV y solicita confirmar si desea reemplazarlo. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -380,7 +383,8 @@ Ver resultados.
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
 | E1 | El administrador no tiene permisos suficientes. | El sistema impide realizar la operación. |
-| E2 | Los datos ingresados no son válidos. | El sistema informa el error. |
+| E2 | Un usuario sin permisos administrativos intenta acceder. | El sistema deniega el acceso a la gestión de usuarios. |
+| E3 | El usuario seleccionado no existe. | El sistema informa que el usuario no fue encontrado. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -417,6 +421,8 @@ Ver resultados.
 |---|-----------|-----------------------|
 | E1 | No existen datos para los filtros seleccionados. | El sistema informa que no hay información disponible. |
 | E2 | Los filtros ingresados no son válidos. | El sistema solicita corregir los datos. |
+| E3 | El administrador selecciona un período de fechas inválido. | El sistema solicita corregir el período seleccionado. |
+| E4 | No se selecciona un tipo de reporte. | El sistema solicita seleccionar el tipo de información a reportar. |
 
 | Campo | Detalle |
 |-------|---------|
@@ -451,7 +457,8 @@ Ver resultados.
 | # | Situación | Respuesta del sistema |
 |---|-----------|-----------------------|
 | E1 | No existen resultados registrados. | El sistema informa que no hay resultados disponibles. |
-| E2 | Se produce un error al consultar la información. | El sistema informa que no fue posible obtener los resultados. |
+| E2 | El resultado seleccionado no existe. | El sistema informa que el resultado solicitado no fue encontrado. |
+| E3 | Se produce un error al consultar la información. | El sistema informa que no fue posible obtener los resultados. |
 
 | Campo | Detalle |
 |-------|---------|
