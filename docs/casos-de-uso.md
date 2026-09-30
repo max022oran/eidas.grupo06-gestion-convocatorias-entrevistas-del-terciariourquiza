@@ -28,17 +28,6 @@ Gestionar usuarios y permisos.
 Generar reportes.
 Ver resultados.
 
-<<include>>
-Ver convocatorias → incluye → Postularse a convocatoria.
-Postularse a convocatoria → incluye → Ver resultado.
-Editar o cerrar convocatoria → incluye → Ver postulantes.
-Ver postulantes → incluye → Entrevistar postulantes.
-Entrevistar postulantes → incluye → Cargar resultado.
-
-<<extend>>
-Crear, editar o cerrar convocatoria → extiende → Ver postulantes.
-Consultar estado de su postulación → extiende → Ver resultado.
-
 ---
 
 ## CU-01 — Ver convocatorias
