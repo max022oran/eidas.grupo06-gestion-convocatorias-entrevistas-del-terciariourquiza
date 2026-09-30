@@ -58,7 +58,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | La información debe mostrarse en un tiempo adecuado para la consulta del usuario. |
+| Rendimiento | La información se mostrará en un máximo de 5 segundos para la consulta del usuario. |
 | Frecuencia | Alta |
 | Importancia | Alta |
 | Urgencia | Alta |
@@ -130,7 +130,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El resultado debe mostrarse en un tiempo adecuado. |
+| Rendimiento | El sistema debe responder en un máximo de 5 segundos. |
 | Frecuencia | Media |
 | Importancia | Alta |
 | Urgencia | Media |
@@ -165,7 +165,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento | El estado debe mostrarse rápidamente. |
+| Rendimiento | El estado debe mostrarse en 5 segundos. |
 | Frecuencia | Alta |
 | Importancia | Alta |
 | Urgencia | Media |
@@ -275,7 +275,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento	| La lista debe mostrarse en un tiempo adecuado. |
+| Rendimiento	| La lista debe mostrarse en un tiempo máximo de 5 segundos. |
 | Frecuencia | Alta |
 | Importancia	| Alta |
 | Urgencia | Media |
@@ -420,7 +420,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento	| El reporte debe generarse en un tiempo adecuado. |
+| Rendimiento	| El reporte debe generarse en un tiempo máximo de 5 segundos. |
 | Frecuencia | Media |
 | Importancia	| Media |
 | Urgencia | Media |
@@ -455,7 +455,7 @@ Ver resultados.
 
 | Campo | Detalle |
 |-------|---------|
-| Rendimiento	| Los resultados deben mostrarse en un tiempo adecuado. |
+| Rendimiento	| Los resultados se mostrarán en 5 segundos como máximo. |
 | Frecuencia | Media |
 | Importancia	| Alta |
 | Urgencia | Media |
