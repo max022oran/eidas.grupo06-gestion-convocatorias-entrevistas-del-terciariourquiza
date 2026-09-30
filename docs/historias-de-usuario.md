@@ -40,7 +40,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como empresa, quiero editar o cerrar convocatorias para mantener actualizada la información disponible. |
-| Módulo |Inicio |
+| Módulo | Inicio |
 | Requisitos relacionados | RF-10, RF-20 |
 
 ### Criterios de aceptación
@@ -161,7 +161,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 | Campo | Detalle |
 |-------|---------|
 | Historia | Como empresa, quiero visualizar la lista de postulantes para evaluar los perfiles recibidos. |
-| Módulo | |
+| Módulo | Convocatorias |
 | Requisitos relacionados | RF-17 |
 
 ### Criterios de aceptación
