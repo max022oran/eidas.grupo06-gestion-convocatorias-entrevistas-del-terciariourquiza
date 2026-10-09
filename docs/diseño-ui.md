@@ -139,7 +139,7 @@ Se utiliza el patrón Card para mostrar las convocatorias disponibles de forma c
 
 El diseño está pensado para ser responsive, permitiendo su utilización tanto desde computadoras como desde dispositivos móviles. Además, el portal permite acceder al perfil y a las postulaciones del usuario.
 
-Una característica importante del diseño es la vinculación automática del CV: al seleccionar "Postularme Ahora", el sistema verifica que el usuario tenga un CV cargado y lo adjunta automáticamente a la postulación, evitando que tenga que cargarlo nuevamente. :contentReference[oaicite:2]{index=2}
+Una característica importante del diseño es la vinculación automática del CV: al seleccionar "Postularme Ahora", el sistema verifica que el usuario tenga un CV cargado y lo adjunta automáticamente a la postulación, evitando que tenga que cargarlo nuevamente.
 
 **Formulario (si aplica):**
 - Cantidad de campos: No requiere nuevos campos para la postulación cuando el usuario ya posee un CV cargado.
@@ -162,7 +162,7 @@ Una característica importante del diseño es la vinculación automática del CV
 **Justificación:**  
 Se utiliza un formulario simple para facilitar el registro de docentes y egresados. La interfaz solicita el tipo de usuario, correo institucional y contraseña, evitando incorporar información innecesaria en esta primera etapa.
 
-El formulario incorpora una validación específica del dominio institucional, ya que el sistema solamente permite el registro mediante correos pertenecientes al dominio `@terciariourquiza.edu.ar`. Esto permite controlar quién puede registrarse y mantener el acceso restringido a usuarios de la institución. :contentReference[oaicite:3]{index=3}
+El formulario incorpora una validación específica del dominio institucional, ya que el sistema solamente permite el registro mediante correos pertenecientes al dominio `@terciariourquiza.edu.ar`. Esto permite controlar quién puede registrarse y mantener el acceso restringido a usuarios de la institución.
 
 **Formulario (si aplica):**
 - Cantidad de campos: 3 campos visibles: tipo de usuario, correo institucional y contraseña.
