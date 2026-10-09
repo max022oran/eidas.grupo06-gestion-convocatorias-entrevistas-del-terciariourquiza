@@ -1,37 +1,34 @@
 @startuml
-title Sistema de Bolsa de trabajo
+title Modelo Entidad-Relación - Sistema de Bolsa de Trabajo
 
 ' ======================================
 ' ENTIDADES
 ' ======================================
 
 entity "Empresa" as Empresa {
-  idEmpresa : Int
+* idEmpresa : Int <<PK>>
   nombre : String
   rubro : String
   email : String
   contraseña : String
-  --
-  crearConvocatoria()
-  verPostulantes()
 }
 
 entity "Usuario" as Usuario {
-  idUsuario : Int
+  * idUsuario : Int <<PK>>
+  --
   nombre : String
   apellido : String
   email : String
   contraseña : String
   sexo : String
   tipoUsuario : String
-  --
-  iniciarSesion()
-  postularse()
-  verResultados()
+  cv : String
 }
 
 entity "Convocatoria" as Convocatoria {
-  idConvocatoria : Int
+  * idConvocatoria : Int <<PK>>
+  --
+  * idEmpresa : Int <<FK>>
   titulo : String
   descripcion : String
   puesto : String
@@ -42,32 +39,27 @@ entity "Convocatoria" as Convocatoria {
   estado : String
   modalidad : String
   linkExterno : String
-  --
-  linkExterno()
-  empresa()
 }
 
 entity "Postulacion" as Postulacion {
-  idPostulacion : Int
-  fecha : Int
+* idPostulacion : Int <<PK>>
+  * idUsuario : Int <<FK>>
+  * idConvocatoria : Int <<FK>>
+  fecha : Date
   estado : String
-  puntaje : Int
-  cv : String
-  --
-  registrar()
+  puntaje : Float
 }
 
 entity "Entrevista" as Entrevista {
-  idEntrevista : Int
-  fechaHora : Int
-  puntaje : Int
+  * idEntrevista : Int <<PK>>
+  * idPostulacion : Int <<FK>>
+  fechaHora : DateTime
+  puntaje : Float
   estado : String
-  --
-  evaluar()
 }
 
 ' ======================================
-' RELACIONES
+' RELACIONES Y CARDINALIDADES
 ' ======================================
 
 Empresa "1" -- "0..*" Convocatoria : publica
