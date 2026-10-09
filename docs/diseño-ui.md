@@ -180,6 +180,6 @@ El formulario incorpora una validación específica del dominio institucional, y
 - Los botones de acciones principales, como **"Postularme Ahora"**, **"Crear Mi Cuenta"**, **"Editar"** y **"Cargar Nota"**, deben utilizar textos descriptivos y no depender únicamente de íconos.
 - Los estados de las convocatorias, postulaciones y entrevistas no deben comunicarse únicamente mediante colores. Deben acompañarse de texto, por ejemplo: **"Activo"**, **"Aprobado"** o **"Desaprobado"**.
 - Los formularios deben presentar etiquetas visibles para cada campo y mensajes claros cuando se produzca un error de validación.
-- El portal de postulantes debe mantener botones y campos suficientemente grandes para poder utilizarse desde dispositivos móviles, teniendo en cuenta que el WF-07 está planteado como una vista responsive Desktop/Mobile. :contentReference[oaicite:4]{index=4}
+- El portal de postulantes debe mantener botones y campos suficientemente grandes para poder utilizarse desde dispositivos móviles, teniendo en cuenta que el WF-07 está planteado como una vista responsive Desktop/Mobile.
 - La navegación del menú lateral y las tablas debe mantener un orden lógico para permitir el uso mediante teclado.
 - Los archivos PDF asociados a los CV deben identificarse mediante texto, y no únicamente mediante el ícono de PDF.
