@@ -1,6 +1,6 @@
 @startuml
 
-title Sistema de Bolsa de Trabajo
+title Diagrama de Casos de Uso - Bolsa de Trabajo
 
 left to right direction
 
@@ -12,6 +12,7 @@ actor "Usuario / Postulante" as Usuario
 actor "Empresa" as Empresa
 actor "Administrador" as Administrador
 
+rectangle "Sistema de Bolsa de Trabajo" {
 
 ' ======================================
 ' CASOS DE USO - USUARIO
@@ -42,6 +43,7 @@ usecase "Gestionar usuarios\ny permisos" as UC10
 usecase "Generar reportes" as UC11
 usecase "Ver resultados" as UC12
 
+}
 
 ' ======================================
 ' RELACIONES - USUARIO
