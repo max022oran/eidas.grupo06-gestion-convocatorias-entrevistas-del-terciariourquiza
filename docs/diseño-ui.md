@@ -5,24 +5,24 @@ _Los wireframes en imagen o PDF van en `diagramas/wireframes/`; acá se document
 
 ---
 
-## Pantalla / Módulo 1 — Dashboard General
+## Pantalla / Módulo 1 — Inicio
 
-**Wireframe:** `diagramas/wireframes/WF-01-dashboard-general.png`
+**Wireframe:** <img width="1083" height="465" alt="image" src="https://github.com/user-attachments/assets/139271d3-f143-42c4-a256-e9fc5656e351" />
 
 **Patrones de diseño utilizados:** Dashboard, tarjetas de métricas, menú lateral y listado de actividad reciente.
 
-**Justificación:** Se utiliza un patrón Dashboard porque permite que el Administrador o Empresa tenga una vista general de la información más importante del sistema. Las tarjetas de métricas permiten identificar rápidamente la cantidad de usuarios, carreras, docentes, egresados, convocatorias y entrevistas. El menú lateral organiza el acceso a los diferentes módulos del sistema, mientras que la sección de actividad reciente permite consultar las últimas acciones realizadas.
+**Justificación:** 
 
 **Formulario (si aplica):**
 - Cantidad de campos: No aplica.
-- Flujo (todo en una pantalla / por pasos): Navegación desde el dashboard hacia los diferentes módulos.
-- Validaciones relevantes: Se debe controlar el acceso según el rol del usuario autenticado.
+- Flujo: Navegación desde la pantalla inicial hacia los módulos disponibles.
+- Validaciones relevantes: Verificar que el usuario haya iniciado sesión y que tenga permisos para acceder a las funcionalidades seleccionadas.
 
 ---
 
-## Pantalla / Módulo 2 — Gestión de Usuarios
+## Pantalla / Módulo 2 — Usuarios
 
-**Wireframe:** `diagramas/wireframes/WF-02-usuarios.png`
+**Wireframe:** <img width="1088" height="498" alt="image" src="https://github.com/user-attachments/assets/1c556baf-3c31-4aa9-bd2c-36c782887ff0" />
 
 **Patrones de diseño utilizados:** Tabla de datos, búsqueda/listado y acciones mediante botones.
 
@@ -42,144 +42,103 @@ El diseño también contempla la separación de roles del sistema: Administrador
 
 ---
 
-## Pantalla / Módulo 3 — Docentes y Egresados
+## Pantalla / Módulo 3 — Programas
 
-**Wireframe:** `diagramas/wireframes/WF-03-docentes-egresados.png`
+**Wireframe:** Pendiente
+**Patrones de diseño utilizados:** Pendiente
 
-**Patrones de diseño utilizados:** Tabla, buscador y acciones sobre registros.
+**Justificación:** Pendiente
 
-**Justificación:**  
-La tabla permite al Administrador consultar de manera ordenada el padrón de docentes y egresados. El buscador facilita encontrar rápidamente un candidato mediante datos como DNI o nombre. La columna correspondiente al CV permite verificar si el usuario posee un currículum adjunto y acceder a él cuando sea necesario.
-
-Este diseño resulta adecuado porque concentra en una única pantalla la información necesaria para administrar y verificar los candidatos.
-
-**Formulario (si aplica):**
-- Cantidad de campos: No aplica para la consulta. El alta de un nuevo registro utiliza un formulario específico.
-- Flujo (todo en una pantalla / por pasos): Consulta y búsqueda en una pantalla.
-- Validaciones relevantes:
-  - Verificar que el usuario corresponda a un docente o egresado.
-  - Validar los datos obligatorios al agregar un nuevo registro.
-  - El acceso a esta información debe estar restringido al Administrador.
+**Formulario (si aplica):** Pendiente
 
 ---
 
-## Pantalla / Módulo 4 — Gestión de Convocatorias
+## Pantalla / Módulo 4 — Convocatorias
 
-**Wireframe:** `diagramas/wireframes/WF-04-convocatorias.png`
+**Wireframe:** <img width="1075" height="672" alt="image" src="https://github.com/user-attachments/assets/80853e65-9956-4cdb-b8ed-6828dd024e01" />
 
-**Patrones de diseño utilizados:** Tabla de datos, acciones por registro y filtros/consulta.
+**Patrones de diseño utilizados:** Tabla de datos, formulario de alta, tarjetas de convocatorias y botones de acción.
 
 **Justificación:**  
-La tabla permite visualizar las convocatorias de forma organizada, mostrando información relevante como empresa, puesto, lugar y período de vigencia. Las acciones permiten acceder a los postulantes o editar una convocatoria.
-
-Este patrón es adecuado para la gestión de convocatorias porque permite administrar múltiples búsquedas sin necesidad de ingresar a cada una individualmente. Además, el diseño diferencia las acciones disponibles para la Empresa y el Administrador.
+La tabla permite que la empresa consulte y administre sus convocatorias, identificando información como el puesto, la ubicación y el período de vigencia. El formulario de alta organiza los datos necesarios para publicar una búsqueda laboral y facilita la validación antes de guardar.
+En el portal del postulante se utiliza el patrón Card para presentar las convocatorias de manera individual, con información relevante y un botón de acción para iniciar la postulación. Esta presentación permite comparar las oportunidades disponibles y acceder a sus detalles sin sobrecargar la pantalla.
 
 **Formulario (si aplica):**
-- Cantidad de campos: No aplica para la consulta de convocatorias.
-- Flujo (todo en una pantalla / por pasos): Consulta en una pantalla.
+- Cantidad de campos: En el formulario de alta se identifican los campos de título o puesto, modalidad, fecha de inicio y fecha de fin. La cantidad definitiva deberá coincidir con el formulario completo implementado.
+- Flujo: Alta y edición en una pantalla.
 - Validaciones relevantes:
-  - Solo la empresa correspondiente puede modificar sus convocatorias.
-  - Las convocatorias deben mostrar correctamente su período de vigencia.
-  - Las convocatorias caducadas deben ocultarse automáticamente.
+  - Los campos obligatorios deben estar completos.
+  - La fecha de finalización debe ser posterior a la fecha de inicio.
+  - La empresa solamente debe poder modificar sus propias convocatorias.
+  - No se deben aceptar nuevas postulaciones a convocatorias cerradas, según el requisito correspondiente.
 
 ---
 
-## Pantalla / Módulo 5 — Alta de Convocatoria
+## Pantalla / Módulo 5 — Carreras
 
-**Wireframe:** `diagramas/wireframes/WF-05-alta-convocatoria.png`
+**Wireframe:**
 
-**Patrones de diseño utilizados:** Formulario y ventana modal/pantalla de alta.
+**Patrones de diseño utilizados:**
 
 **Justificación:**  
-Se utiliza un formulario para permitir que la Empresa registre los datos necesarios de una nueva convocatoria de forma organizada. Los campos se agrupan en una única pantalla para que la carga sea directa y sencilla.
-
-El formulario permite registrar información relacionada con el puesto, modalidad y período de vigencia. La validación de fechas es especialmente importante porque determina cuándo la convocatoria se encuentra disponible para recibir postulaciones.
 
 **Formulario (si aplica):**
-- Cantidad de campos: 5 campos visibles en el wireframe: título/puesto, modalidad, fecha de inicio y fecha de fin, considerando los datos mostrados en el diseño.
-- Flujo (todo en una pantalla / por pasos): Todo en una pantalla.
-- Validaciones relevantes:
-  - Completar los campos obligatorios.
-  - La fecha de fin debe ser posterior a la fecha de inicio.
-  - La convocatoria debe quedar asociada a la empresa que la crea.
-  - Las convocatorias caducadas deben dejar de estar disponibles.
 
 ---
 
-## Pantalla / Módulo 6 — Entrevistas y Evaluación
+## Pantalla / Módulo 6 — Docentes y Egresados
 
-**Wireframe:** `diagramas/wireframes/WF-06-panel-evaluacion.png`
+**Wireframe:** <img width="1075" height="312" alt="image" src="https://github.com/user-attachments/assets/9ff14dbc-b1ba-494b-ba88-9b3421c3b799" />
 
-**Patrones de diseño utilizados:** Tabla de evaluación y acciones por registro.
+**Patrones de diseño utilizados:** Tabla de datos, buscador y acciones sobre registros.
 
-**Justificación:**  
-Se utiliza una tabla para que la Empresa pueda consultar y evaluar a los postulantes que participan del proceso de selección. La información se organiza por postulante, puesto, puntaje y resultado, permitiendo comparar los registros de manera ordenada.
-
-La acción "Cargar Nota" permite registrar la evaluación correspondiente a cada postulante sin abandonar la pantalla principal del módulo.
+**Justificación:**
+La tabla permite consultar los datos de docentes y egresados de manera organizada. El buscador facilita localizar un registro por nombre o DNI, mientras que la información del CV permite identificar si el usuario tiene un currículum asociado a su cuenta.
+Este diseño facilita las tareas de consulta y administración del padrón sin necesidad de abrir cada registro individualmente. El acceso a los datos y a los archivos adjuntos debe limitarse a los usuarios autorizados.
 
 **Formulario (si aplica):**
-- Cantidad de campos: La carga de evaluación se realiza sobre el postulante seleccionado.
-- Flujo (todo en una pantalla / por pasos): Todo en una pantalla.
+- Cantidad de campos: No aplica para la consulta del padrón. El formulario de alta o modificación deberá definirse según los campos establecidos para esos procesos.
+- Flujo: Consulta y búsqueda en una pantalla.
 - Validaciones relevantes:
-  - El postulante debe pertenecer a una convocatoria de la empresa.
-  - El puntaje debe ser válido.
-  - El resultado debe quedar asociado al postulante correspondiente.
-  - Solo la Empresa responsable de la convocatoria debe poder realizar la evaluación.
+  - Validar los campos obligatorios al registrar o modificar información.
+  - Verificar que el CV adjunto corresponda al usuario correcto.
+  - Restringir el acceso a los datos personales y documentos según los permisos definidos.
 
 ---
 
-## Pantalla / Módulo 7 — Portal Web del Postulante
+## Pantalla / Módulo 7 — Entrevistas
 
-**Wireframe:** `diagramas/wireframes/WF-07-portal-postulante.png`
+**Wireframe:** <img width="1062" height="262" alt="image" src="https://github.com/user-attachments/assets/06d10027-f4b4-4c86-a2f5-723c5872f00d" />
 
-**Patrones de diseño utilizados:** Cards de convocatorias, botón de acción principal y diseño responsive.
+**Patrones de diseño utilizados:** Tabla de evaluación, acciones por registro y formulario de carga de resultados.
 
 **Justificación:**  
-Se utiliza el patrón Card para mostrar las convocatorias disponibles de forma clara y permitir que el usuario consulte rápidamente el puesto, empresa, ubicación y descripción. El botón "Postularme Ahora" funciona como acción principal y facilita el acceso al proceso de postulación.
-
-El diseño está pensado para ser responsive, permitiendo su utilización tanto desde computadoras como desde dispositivos móviles. Además, el portal permite acceder al perfil y a las postulaciones del usuario.
-
-Una característica importante del diseño es la vinculación automática del CV: al seleccionar "Postularme Ahora", el sistema verifica que el usuario tenga un CV cargado y lo adjunta automáticamente a la postulación, evitando que tenga que cargarlo nuevamente.
+La tabla permite a la empresa consultar y evaluar a los postulantes de sus convocatorias. La información se organiza mediante datos del postulante, puesto, puntaje y resultado, facilitando el seguimiento del proceso de selección.
+La acción para cargar una nota permite registrar la evaluación correspondiente a cada postulante. Sin embargo, el prototipo actual debe ampliarse para representar también la programación de entrevistas, incluyendo fecha, hora y modalidad, de acuerdo con los requisitos funcionales del sistema.
 
 **Formulario (si aplica):**
-- Cantidad de campos: No requiere nuevos campos para la postulación cuando el usuario ya posee un CV cargado.
-- Flujo (todo en una pantalla / por pasos): Todo en una pantalla.
+
+- Cantidad de campos: El formulario de programación deberá incluir, como mínimo, fecha, hora y modalidad. Los campos para registrar la evaluación deberán corresponder a los datos definidos en el sistema.
+- Flujo: Programación y registro de resultados en formularios específicos de una pantalla.
 - Validaciones relevantes:
-  - El usuario debe estar autenticado.
-  - Debe existir un CV cargado.
-  - La convocatoria debe estar vigente.
-  - No se debe permitir una segunda postulación a la misma convocatoria.
-  - El CV debe adjuntarse automáticamente a la postulación.
+  - La entrevista debe estar asociada a una postulación existente.
+  - La fecha, hora y modalidad deben estar completas al programar la entrevista.
+  - La empresa solamente debe gestionar entrevistas correspondientes a sus convocatorias.
+  - Los resultados deben quedar asociados a la entrevista y a la postulación correspondiente.
 
 ---
 
-## Pantalla / Módulo 8 — Registro de Usuario
+## Pantalla / Módulo 8 —
 
-**Wireframe:** `diagramas/wireframes/WF-08-registro.png`
+**Wireframe:**
 
-**Patrones de diseño utilizados:** Formulario de registro y validación de campos.
+**Patrones de diseño utilizados:**
 
 **Justificación:**  
-Se utiliza un formulario simple para facilitar el registro de docentes y egresados. La interfaz solicita el tipo de usuario, correo institucional y contraseña, evitando incorporar información innecesaria en esta primera etapa.
-
-El formulario incorpora una validación específica del dominio institucional, ya que el sistema solamente permite el registro mediante correos pertenecientes al dominio `@terciariourquiza.edu.ar`. Esto permite controlar quién puede registrarse y mantener el acceso restringido a usuarios de la institución.
 
 **Formulario (si aplica):**
-- Cantidad de campos: 3 campos visibles: tipo de usuario, correo institucional y contraseña.
-- Flujo (todo en una pantalla / por pasos): Todo en una pantalla.
-- Validaciones relevantes:
-  - El correo debe pertenecer al dominio `@terciariourquiza.edu.ar`.
-  - El tipo de usuario debe estar seleccionado.
-  - La contraseña debe ser ingresada.
-  - No se debe permitir registrar un correo que ya exista.
 
 ---
 
 ## Consideraciones de accesibilidad
 
-- Los botones de acciones principales, como **"Postularme Ahora"**, **"Crear Mi Cuenta"**, **"Editar"** y **"Cargar Nota"**, deben utilizar textos descriptivos y no depender únicamente de íconos.
-- Los estados de las convocatorias, postulaciones y entrevistas no deben comunicarse únicamente mediante colores. Deben acompañarse de texto, por ejemplo: **"Activo"**, **"Aprobado"** o **"Desaprobado"**.
-- Los formularios deben presentar etiquetas visibles para cada campo y mensajes claros cuando se produzca un error de validación.
-- El portal de postulantes debe mantener botones y campos suficientemente grandes para poder utilizarse desde dispositivos móviles, teniendo en cuenta que el WF-07 está planteado como una vista responsive Desktop/Mobile.
-- La navegación del menú lateral y las tablas debe mantener un orden lógico para permitir el uso mediante teclado.
-- Los archivos PDF asociados a los CV deben identificarse mediante texto, y no únicamente mediante el ícono de PDF.
