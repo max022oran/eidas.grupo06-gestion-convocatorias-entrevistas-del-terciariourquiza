@@ -177,7 +177,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque puede desarrollarse como una funcionalidad específica para consultar los postulantes de una convocatoria. |
+| Independiente | Parcial | Porque requiere que exista una convocatoria con postulaciones y que la empresa esté autenticada y autorizada. |
 | Negociable | Sí | Porque la forma de presentar la lista y los datos de los postulantes puede acordarse durante el desarrollo. |
 | Valiosa | Sí | Porque permite a la empresa conocer los perfiles de las personas que se postularon a sus convocatorias. |
 | Estimable | Sí | Porque el alcance está definido en consultar la lista de postulantes y su información asociada. |
@@ -209,10 +209,10 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque puede desarrollarse como una funcionalidad específica para registrar entrevistas de los postulantes. |
+| Independiente | Parcial | Porque requiere una postulación existente y que la empresa tenga permiso para gestionar esa convocatoria. |
 | Negociable | Sí | Porque la modalidad y la forma de mostrar los datos de la entrevista pueden acordarse durante el desarrollo. |
 | Valiosa | Sí | Porque permite a la empresa organizar las entrevistas con los postulantes seleccionados. |
-| Estimable | Sí | Porque los datos necesarios para programar una entrevista están definidos: postulante, fecha, hora y modalidad. |
+| Estimable | Parcial | Porque es necesario definir las reglas para la fecha, la hora, la modalidad y los posibles conflictos de horarios. |
 | Pequeña | Sí | Porque se centra en programar y registrar una entrevista. |
 | Verificable | Sí | Porque se puede comprobar que la entrevista queda registrada correctamente y asociada a la postulación correspondiente. |
 
@@ -238,7 +238,7 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque puede desarrollarse como una funcionalidad específica para que el usuario consulte sus entrevistas asignadas. |
+| Independiente | Parcial | Porque depende de que la empresa haya programado una entrevista para una postulación del usuario. |
 | Negociable | Sí | Porque la forma de mostrar la fecha, hora, modalidad y convocatoria puede acordarse durante el desarrollo. |
 | Valiosa | Sí | Porque permite al usuario conocer la fecha, hora y modalidad de la entrevista asignada. |
 | Estimable | Sí | Porque el alcance se limita a consultar y mostrar la información de las entrevistas asignadas. |
@@ -269,11 +269,11 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente	| Sí | Porque puede desarrollarse como una funcionalidad específica para registrar el resultado de una entrevista existente. |
-| Negociable | Sí | Porque el tipo de resultado y la forma de registrarlo pueden acordarse durante el desarrollo. |
+| Independiente	| Parcial | Porque requiere que exista una entrevista programada y que la empresa tenga autorización para registrar su resultado. |
+| Negociable | Parcial | Porque se debe acordar qué resultados se pueden registrar y qué información adicional se solicita. |
 | Valiosa |	Sí | Porque permite a la empresa dejar registrado el resultado de las entrevistas y realizar el seguimiento del proceso de selección. |
-| Estimable	| Sí | Porque se concentra en registrar el resultado de una entrevista. |
-| Pequeña |	Sí | Porque se centra en registrar el resultado de una entrevista. |
+| Estimable	| Parcial | Porque se debe precisar si registrar el resultado también actualiza automáticamente el estado de la postulación. |
+| Pequeña |	Parcial | Porque si además de guardar el resultado modifica otros estados, el alcance puede ampliarse. |
 | Verificable | Sí | Porque se puede comprobar que el resultado se guarda correctamente y queda asociado a la entrevista correspondiente. |
 
 ---
@@ -301,11 +301,11 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |	Sí | Porque puede desarrollarse como una funcionalidad de administración independiente de las funciones del postulante y de la empresa. |
-| Negociable | Sí | Porque la forma de consultar usuarios y modificar permisos puede acordarse durante el desarrollo. |
+| Independiente |	Parcial | Porque requiere autenticación del administrador y un sistema de roles y permisos definido. |
+| Negociable | Parcial | Porque se deben definir qué operaciones puede realizar el administrador y qué permisos corresponden a cada rol. |
 | Valiosa |	Sí | Porque permite al administrador controlar los usuarios y sus permisos dentro del sistema. |
-| Estimable |	Sí | Porque el alcance está definido en consultar usuarios y gestionar sus permisos. |
-| Pequeña	| Sí | Porque se concentra en la gestión de usuarios y permisos. |
+| Estimable |	Parcial | Porque el alcance depende de si incluye altas, modificaciones, bajas, asignación de roles y otras operaciones. |
+| Pequeña	| Parcial | Porque puede ser demasiado amplia si incluye toda la gestión de usuarios y permisos en una sola historia. |
 | Verificable |	Sí | Porque se puede comprobar que los cambios de permisos se guardan correctamente y que cada usuario tiene el acceso correspondiente. |
 
 ---
@@ -333,12 +333,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente |	Sí | Porque puede desarrollarse como una funcionalidad específica para generar reportes a partir de la información existente. |
-| Negociable | Sí | Porque los tipos de reportes, filtros y forma de presentación pueden acordarse durante el desarrollo. |
+| Independiente |	Parcial | Porque requiere que existan datos registrados de convocatorias, postulaciones o entrevistas. |
+| Negociable | Parcial | Porque se debe acordar qué reportes se generan, qué filtros se aplican y qué información muestran. |
 | Valiosa |	Sí | Porque permite al administrador consultar y analizar información registrada sobre las convocatorias y entrevistas. |
-| Estimable |	Sí | Porque el alcance está definido en seleccionar información, aplicar filtros y generar el reporte. |
-| Pequeña |	Sí | Porque se centra en generar reportes a partir de la información disponible. |
-| Verificable	| Sí | Porque se puede comprobar que el reporte muestra la información correspondiente a los filtros seleccionados. |
+| Estimable |	Parcial | Porque no se puede estimar con precisión hasta definir los tipos de reportes y sus filtros. |
+| Pequeña |	Parcial | Porque puede abarcar demasiado si incluye varios reportes diferentes; se podrían separar por tipo. |
+| Verificable	| Parcial | Porque se debe definir el contenido esperado de cada reporte y comprobar que coincida con los datos almacenados. |
 
 ---
 
@@ -365,9 +365,9 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente	| Sí | Porque puede desarrollarse como una funcionalidad específica para consultar el estado de las postulaciones del usuario. |
+| Independiente	| Parcial | Porque requiere que el usuario esté registrado y tenga al menos una postulación realizada. |
 | Negociable | Sí | Porque la forma de mostrar el estado, la entrevista y el resultado puede acordarse durante el desarrollo. |
 | Valiosa	| Sí | Porque permite al usuario conocer el avance de sus procesos de selección. |
-| Estimable |	Sí | Porque el alcance está definido en consultar las postulaciones y mostrar su estado actual. |
-| Pequeña |	Sí | Porque se concentra en consultar el estado de las postulaciones del usuario. |
+| Estimable |	Parcial | Porque hay que definir los estados posibles y si la pantalla también muestra entrevistas y resultados. |
+| Pequeña |	Parcial | Porque si incluye postulaciones, entrevistas y resultados en una misma pantalla, su alcance puede ser amplio. |
 | Verificable |	Sí | Porque se puede comprobar que el sistema muestra correctamente el estado correspondiente a cada postulación del usuario. |
