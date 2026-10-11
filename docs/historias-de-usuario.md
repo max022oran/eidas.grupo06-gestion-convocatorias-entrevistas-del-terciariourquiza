@@ -26,12 +26,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque puede desarrollarse como una funcionalidad independiente para la creación de convocatorias. |
-| Negociable | Sí | Porque los campos y detalles de la convocatoria pueden acordarse y modificarse durante el desarrollo. |
-| Valiosa | Sí | Porque permite a la empresa publicar nuevas oportunidades laborales para recibir postulaciones. |
-| Estimable | Sí | Porque tiene un alcance concreto y permite estimar las tareas necesarias para crear una convocatoria. |
-| Pequeña | Sí | Porque se concentra únicamente en crear y registrar una convocatoria. |
-| Verificable | Sí | Porque los criterios de aceptación permiten comprobar que la convocatoria se crea y registra correctamente. |
+| Independiente | Parcial | Porque requiere que exista el acceso de la empresa y que tenga permisos para crear convocatorias. |
+| Negociable | Sí | Porque se pueden acordar los campos del formulario y los detalles de la publicación. |
+| Valiosa | Sí | Porque la empresa permite publicar búsquedas laborales en el sistema. |
+| Estimable | Sí | Porque el alcance puede estimarse si están definidos los campos y las validaciones. |
+| Pequeña | Sí | Porque se concentra en la creación de una convocatoria. |
+| Verificable | Sí | Porque se puede comprobar que los datos se validen y que la convocatoria quede registrada. |
 
 ---
 
@@ -55,12 +55,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque puede desarrollarse como una funcionalidad específica para modificar o cerrar convocatorias existentes. |
-| Negociable | Sí | Porque la forma de editar los datos y las condiciones para cerrar una convocatoria pueden acordarse durante el desarrollo. |
-| Valiosa | Sí | Porque permite a la empresa mantener actualizada la información de sus convocatorias y controlar cuándo dejan de aceptar postulaciones. |
-| Estimable | Sí | Porque las tareas necesarias para modificar y cerrar una convocatoria tienen un alcance definido. |
+| Independiente | Parcial | Porque requiere que exista una convocatoria creada y que la empresa tenga autorización sobre ella. |
+| Negociable | Sí | Porque se pueden acordar los campos editables y las condiciones para cerrar una convocatoria. |
+| Valiosa | Sí | Porque permite mantener actualizadas las convocatorias y detener nuevas postulaciones. |
+| Estimable | Parcial | Porque combina dos operaciones: editar y cerrar. Conviene estimarlas por separado. |
 | Pequeña | No | Porque incluye dos acciones diferentes: editar una convocatoria y cerrarla. |
-| Verificable | Sí | Porque se puede comprobar que los datos se modifican correctamente y que una convocatoria cerrada no acepta nuevas postulaciones.
+| Verificable | Sí | Porque se puede comprobar que los cambios se guarden y que una convocatoria cerrada no acepte nuevas postulaciones.
 
 ---
 
@@ -85,12 +85,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque el registro de usuario puede desarrollarse como una funcionalidad específica del sistema. |
-| Negociable | Sí | Porque los campos del formulario y la forma de validar los datos pueden acordarse durante el desarrollo. |
-| Valiosa | Sí | Porque permite al usuario crear una cuenta para acceder al sistema y participar en las convocatorias. |
-| Estimable | Sí | Porque tiene un alcance definido relacionado con completar, validar y guardar los datos del usuario. |
+| Independiente | Parcial | Porque puede desarrollarse como funcionalidad propia, pero requiere definir cómo se validan el correo institucional y los datos de registro. |
+| Negociable | Sí | Porque se pueden acordar los campos obligatorios y los mensajes de confirmación o error. |
+| Valiosa | Sí | Porque permite que los usuarios accedan al sistema y puedan utilizar sus funcionalidades. |
+| Estimable | Sí | Porque el alcance es estimable si están definidos los campos y las reglas de validación. |
 | Pequeña | Sí | Porque se concentra en una única funcionalidad: registrar un usuario. |
-| Verificable | Sí | Porque se puede comprobar que un usuario válido se registra y que los datos incorrectos son rechazados. |
+| Verificable | Sí | Porque se puede probar un registro válido, un correo duplicado y un correo institucional inválido. |
 
 ---
 
@@ -115,12 +115,12 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque la carga del CV puede desarrollarse como una funcionalidad específica asociada al usuario. |
-| Negociable | Sí | Porque la forma de seleccionar, validar y mostrar el archivo puede acordarse durante el desarrollo. |
+| Independiente | Parcial | Porque requiere que el usuario tenga una cuenta y pueda acceder al sistema. |
+| Negociable | Parcial | Porque falta definir si el usuario puede reemplazar el CV y qué ocurre con las postulaciones ya realizadas. |
 | Valiosa | Sí | Porque permite al usuario disponer de su CV para utilizarlo en sus postulaciones. |
-| Estimable | Sí | Porque el alcance se limita a seleccionar, validar, almacenar y asociar el CV al usuario. |
-| Pequeña | Sí | Porque se centra en cargar y almacenar el CV del usuario. |
-| Verificable | Sí | Porque se puede comprobar que un archivo válido se almacena correctamente y queda asociado al usuario. |
+| Estimable | Parcial | Porque se debe precisar el formato admitido, el tamaño máximo y el comportamiento al reemplazar un archivo. |
+| Pequeña | Sí | Porque se concentra en cargar y asociar el CV a una cuenta, siempre que no incluya funciones adicionales. |
+| Verificable | Sí | Porque se puede probar la carga de un PDF válido y el rechazo de un archivo que no cumpla las condiciones definidas. |
 
 ---
 
@@ -147,11 +147,11 @@ _Cada historia debe incluir formato clásico, criterios de aceptación y validac
 
 | Criterio | ¿Se cumple? | Observación |
 |----------|-------------|-------------|
-| Independiente | Sí | Porque la postulación puede implementarse como una funcionalidad específica una vez disponibles los datos del usuario y la convocatoria. |
+| Independiente | Parcial | Porque requiere que exista una convocatoria creada y publicada, que el usuario esté registrado y de que tenga un CV cargado. |
 | Negociable | Sí | Porque la forma de confirmar la postulación y mostrar la información puede acordarse durante el desarrollo. |
 | Valiosa | Sí | Porque permite al usuario participar en los procesos de selección publicados mediante el sistema. |
-| Estimable | Sí | Porque tiene un alcance definido: validar las condiciones y registrar la postulación. |
-| Pequeña | Sí | Porque se concentra en realizar una postulación a una convocatoria. |
+| Estimable | Parcial | Porque incluye varias validaciones: convocatoria vigente, CV cargado y prevención de postulaciones duplicadas. |
+| Pequeña | Parcial | Porque reúne varias reglas de negocio. Se debe verificar que todas puedan implementarse dentro de una historia de tamaño manejable. |
 | Verificable | Sí | Porque se puede comprobar que una postulación válida queda registrada y que se rechazan postulaciones que no cumplen los requisitos. |
 
 ---
