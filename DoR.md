@@ -13,7 +13,7 @@ criterios de aceptación escritos"), no como un deseo ("la historia está bien d
 
 | # | Ítem | Justificación (qué problema evita, máx. 3 renglones) |
 |---|------|--------------------------------------------------------|
-| 1 | La historia tiene establecida los roles de usuario y la funcionalidad que necesita. | Evita confusiones sobre quién utiliza la funcionalidad y qué necesita hacer. |
+| 1 | La historia tiene establecidos los roles de usuario y la funcionalidad que necesita. | Evita confusiones sobre quién utiliza la funcionalidad y qué necesita hacer. |
 | 2 | La historia tiene criterios de aceptación escritos y verificables. | Permite comprobar objetivamente cuándo se considera cumplida. |
 | 3 | La historia identifica los requisitos funcionales relacionados. | Evita desarrollar funcionalidades que no estén contempladas en los requisitos. |
 | 4 | La historia tiene identificadas las reglas de negocio y validaciones necesarias. | Reduce errores y evita interpretaciones diferentes durante el desarrollo. |
