@@ -1,68 +1,100 @@
 @startuml
 title Modelo Entidad-Relación - Sistema de Bolsa de Trabajo
 
+hide circle
+skinparam linetype ortho
+
 ' ======================================
 ' ENTIDADES
 ' ======================================
 
-entity "Empresa" as Empresa {
-* idEmpresa : Int <<PK>>
-  nombre : String
-  rubro : String
-  email : String
-  contraseña : String
+entity "Carrera" as Carrera {
+  * idCarrera : Int <<PK>>
+  --
+  * nombre : String <<UK>>
+  * activa : Boolean
 }
 
 entity "Usuario" as Usuario {
   * idUsuario : Int <<PK>>
   --
-  nombre : String
-  apellido : String
-  email : String
-  contraseña : String
+  idCarrera : Int <<FK>>
+  * nombre : String
+  * apellido : String
+  * email : String <<UK>>
+  * contraseña : String
   sexo : String
-  tipoUsuario : String
+  * tipoUsuario : String
   cv : String
+  * activo : Boolean
+  * intentosFallidos : Int
+  bloqueadoHasta : DateTime
+}
+
+entity "Empresa" as Empresa {
+  * idEmpresa : Int <<PK>>
+  --
+  * idUsuario : Int <<FK>> <<UK>>
+  * nombre : String
+  rubro : String
 }
 
 entity "Convocatoria" as Convocatoria {
   * idConvocatoria : Int <<PK>>
   --
   * idEmpresa : Int <<FK>>
-  titulo : String
-  descripcion : String
-  puesto : String
-  ubicacion : String
-  requisitos : String
-  fechaInicio : Date
-  fechaFin : Date
-  estado : String
-  modalidad : String
+  * titulo : String
+  * descripcion : String
+  * puesto : String
+  * ubicacion : String
+  * requisitos : String
+  * fechaInicio : Date
+  * fechaFin : Date
+  * estado : String
+  * modalidad : String
   linkExterno : String
 }
 
+entity "ConvocatoriaCarrera" as ConvocatoriaCarrera {
+  * idConvocatoria : Int <<PK, FK>>
+  * idCarrera : Int <<PK, FK>>
+}
+
 entity "Postulacion" as Postulacion {
-* idPostulacion : Int <<PK>>
+  * idPostulacion : Int <<PK>>
+  --
   * idUsuario : Int <<FK>>
   * idConvocatoria : Int <<FK>>
-  fecha : Date
-  estado : String
-  puntaje : Float
+  * fecha : Date
+  * estado : String
 }
 
 entity "Entrevista" as Entrevista {
   * idEntrevista : Int <<PK>>
-  * idPostulacion : Int <<FK>>
-  fechaHora : DateTime
+  --
+  * idPostulacion : Int <<FK>> <<UK>>
+  * fechaHora : DateTime
+  * modalidad : String
+  * estado : String
   puntaje : Float
-  estado : String
+  resultado : String
 }
+
+note bottom of Postulacion
+  (idUsuario, idConvocatoria) es único:
+  un usuario no puede postularse dos veces
+  a la misma convocatoria (RF-15).
+end note
 
 ' ======================================
 ' RELACIONES Y CARDINALIDADES
 ' ======================================
 
+Carrera "0..1" -- "0..*" Usuario : cursa / egresó
+Usuario "1" -- "0..1" Empresa : accede como
 Empresa "1" -- "0..*" Convocatoria : publica
+Convocatoria "1" -- "1..*" ConvocatoriaCarrera : está dirigida a
+Carrera "1" -- "0..*" ConvocatoriaCarrera : es destinataria en
 Usuario "1" -- "0..*" Postulacion : realiza
 Convocatoria "1" -- "0..*" Postulacion : recibe
 Postulacion "1" -- "0..1" Entrevista : genera
