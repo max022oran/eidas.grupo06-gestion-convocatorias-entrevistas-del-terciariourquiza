@@ -9,102 +9,126 @@ _Visualizar en [plantuml.com](https://www.plantuml.com/plantuml/uml/)._
 
 | Entidad | Descripción | Relaciones clave |
 |---------|-------------|-----------------|
-| **Empresa** | Representa a las empresas que publican y gestionan convocatorias laborales. | Publica convocatorias. |
-| **Usuario** | Representa a los usuarios que registrados en el sistema que pueden postularse a las convocatorias. | Realiza postulaciones y tiene asociado su CV. |
-| **Convocatoria** | Representa una búsqueda laboral publicada por una empresa, con información sobre el puesto, requisitos, fechas y modalidad de trabajo. | Es publicada por una empresa y recibe postulaciones. |
-| **Postulación** | Representa la inscripción de un usuario a una convocatoria y permite registrar información sobre el proceso de selección. | Es realizada por un usuario, corresponde a una convocatoria y puede generar una entrevista. |
-| **Entrevista** | Representa una instancia de entrevista asociada a una postulación, donde se registra información como fecha, puntaje y estado. | Es generada por una postulación y puede existir como máximo una entrevista por postulación. |
+| **Carrera** | Representa una carrera del Terciario Urquiza. Se usa para indicar la formación del postulante y a quiénes está dirigida cada convocatoria. | Es cursada por usuarios y es destinataria de convocatorias (a través de ConvocatoriaCarrera). |
+| **Usuario** | Representa toda cuenta que accede al sistema: postulantes, empresas y administradores. Guarda las credenciales, el rol, el CV y los datos de control de acceso. | Pertenece opcionalmente a una carrera, realiza postulaciones y, si su rol es Empresa, tiene asociada una Empresa. |
+| **Empresa** | Representa los datos institucionales de una organización que publica convocatorias. | Accede al sistema mediante un Usuario y publica convocatorias. |
+| **Convocatoria** | Representa una búsqueda laboral publicada por una empresa, con información sobre el puesto, requisitos, fechas y modalidad de trabajo. | Es publicada por una empresa, está dirigida a una o más carreras y recibe postulaciones. |
+| **ConvocatoriaCarrera** | Entidad intermedia que registra a qué carreras está dirigida cada convocatoria. | Relaciona Convocatoria con Carrera. |
+| **Postulación** | Representa la inscripción de un usuario a una convocatoria y el estado de su proceso de selección. | Es realizada por un usuario, corresponde a una convocatoria y puede generar una entrevista. |
+| **Entrevista** | Representa la entrevista asociada a una postulación, con su fecha, modalidad y el resultado registrado por la empresa. | Pertenece a una postulación; hay como máximo una entrevista por postulación. |
 
 ## Descripción de atributos principales
 
-_Para cada entidad, describir brevemente los atributos más relevantes y su propósito._
+_PK = clave primaria. FK = clave foránea. UK = valor único. Los atributos marcados como opcionales pueden quedar vacíos._
 
-### Empresa
+### Carrera
 
-- `idEmpresa` (PK, Int): identificador único de la empresa.
-- `nombre` (String): nombre de la empresa.
-- `rubro` (String): actividad o sector al que pertenece.
-- `email` (String): correo electrónico de contacto y acceso.
-- `contraseña` (String): credencial utilizada para acceder al sistema, almacenada de forma segura.
+- `idCarrera` (PK, Int): identificador único de la carrera.
+- `nombre` (UK, String): nombre de la carrera; no puede repetirse.
+- `activa` (Boolean): indica si la carrera se ofrece en el registro y al crear convocatorias (RF-28, RF-31).
 
 ### Usuario
 
 - `idUsuario` (PK, Int): identificador único del usuario.
-- `nombre` (String): nombre del usuario.
+- `idCarrera` (FK, Int, opcional): carrera que cursa o de la que egresó. Obligatorio para postulantes; vacío para empresas y administradores (RF-01).
+- `nombre` (String): nombre del usuario. En una cuenta de empresa, el de la persona de contacto.
 - `apellido` (String): apellido del usuario.
-- `email` (String): correo electrónico utilizado para acceder al sistema.
-- `contraseña` (String): credencial utilizada para acceder al sistema, almacenada de forma segura.
-- `sexo` (String): información correspondiente al sexo del usuario.
-- `tipoUsuario` (String): identifica el tipo o rol del usuario dentro del sistema.
-- `cv` (String): ruta o referencia al archivo del currículum vigente del usuario.
+- `email` (UK, String): correo utilizado para acceder al sistema. Para postulantes debe ser del dominio institucional (RNF-04).
+- `contraseña` (String): credencial de acceso, almacenada de forma cifrada, nunca en texto plano (RNF-05).
+- `sexo` (String, opcional): información correspondiente al sexo del usuario.
+- `tipoUsuario` (String): rol dentro del sistema. Valores: Postulante, Empresa o Administrador (RF-04).
+- `cv` (String, opcional): ruta al archivo PDF del currículum vigente. Vacío hasta que el postulante lo carga (RF-09).
+- `activo` (Boolean): indica si la cuenta puede iniciar sesión; el administrador la desactiva al darla de baja (RF-08).
+- `intentosFallidos` (Int): cantidad de intentos de acceso incorrectos consecutivos (RF-06).
+- `bloqueadoHasta` (DateTime, opcional): momento hasta el que la cuenta queda bloqueada luego de 3 intentos fallidos (RF-07).
+
+### Empresa
+
+- `idEmpresa` (PK, Int): identificador único de la empresa.
+- `idUsuario` (FK, UK, Int): cuenta con la que la empresa accede al sistema. Cada cuenta corresponde a una sola empresa.
+- `nombre` (String): nombre de la empresa.
+- `rubro` (String, opcional): actividad o sector al que pertenece.
 
 ### Convocatoria
 
 - `idConvocatoria` (PK, Int): identificador único de la convocatoria.
-- `idEmpresa` (FK, Int): identifica a la empresa que publica la convocatoria.
-- `titulo` (String): título de la convocatoria laboral.
+- `idEmpresa` (FK, Int): empresa que publica la convocatoria.
+- `titulo` (String): título de la convocatoria.
 - `descripcion` (String): descripción general de la búsqueda.
 - `puesto` (String): puesto o cargo ofrecido.
 - `ubicacion` (String): lugar donde se desarrolla la actividad.
 - `requisitos` (String): requisitos solicitados para el puesto.
 - `fechaInicio` (Date): fecha de inicio de la convocatoria.
-- `fechaFin` (Date): fecha de finalización de la convocatoria.
-- `estado` (String): estado actual de la convocatoria.
-- `modalidad` (String): modalidad de trabajo.
-- `linkExterno` (String): enlace externo relacionado con la convocatoria.
+- `fechaFin` (Date): fecha de finalización; debe ser posterior a `fechaInicio` (RF-33).
+- `estado` (String): Vigente, Cerrada o Vencida (RF-34).
+- `modalidad` (String): modalidad de trabajo (presencial, remota o híbrida).
+- `linkExterno` (String, opcional): enlace externo relacionado con la convocatoria.
+
+### ConvocatoriaCarrera
+
+- `idConvocatoria` (PK, FK, Int): convocatoria.
+- `idCarrera` (PK, FK, Int): carrera a la que está dirigida.
+
+_La clave primaria es la combinación de ambos atributos, por lo que una carrera no puede repetirse en la misma convocatoria._
 
 ### Postulación
 
 - `idPostulacion` (PK, Int): identificador único de la postulación.
-- `idUsuario` (FK, Int): identifica al usuario que realiza la postulación.
-- `idConvocatoria` (FK, Int): identifica la convocatoria a la que se postula.
-- `fecha` (Date): fecha en la que el usuario realiza la postulación.
-- `estado` (String): estado actual de la postulación.
-- `puntaje` (Float): puntaje asociado al proceso de selección.
+- `idUsuario` (FK, Int): usuario que se postula.
+- `idConvocatoria` (FK, Int): convocatoria a la que se postula.
+- `fecha` (Date): fecha en la que se realizó la postulación.
+- `estado` (String): Postulado, Entrevista programada, Aprobado o No aprobado (RF-34).
+
+_La combinación (`idUsuario`, `idConvocatoria`) es única: un usuario no puede postularse dos veces a la misma convocatoria (RF-15)._
 
 ### Entrevista
 
 - `idEntrevista` (PK, Int): identificador único de la entrevista.
-- `idPostulacion` (FK, Int): identifica la postulación a la que pertenece la entrevista.
-- `fechaHora` (DateTime): fecha y hora programada para la entrevista.
-- `puntaje` (Float): puntaje obtenido en la entrevista.
-- `estado` (String): estado actual de la entrevista.
+- `idPostulacion` (FK, UK, Int): postulación a la que pertenece. Al ser única, garantiza una sola entrevista por postulación.
+- `fechaHora` (DateTime): fecha y hora programadas; no puede ser anterior al momento en que se programa (RF-35).
+- `modalidad` (String): Presencial o Virtual (RF-21).
+- `estado` (String): Programada o Realizada (RF-36).
+- `puntaje` (Float, opcional): puntaje asignado por la empresa al registrar el resultado.
+- `resultado` (String, opcional): Aprobado o No aprobado. Vacío mientras la entrevista está Programada (RF-18).
 
 ## Decisiones de diseño
 
-_Justificar al menos dos decisiones de diseño relevantes: por qué se modeló de esa manera,
-qué alternativas se consideraron y por qué se descartaron._
-
 ### Decisión 1 — Entidad Postulación.
 
-Se modeló **Postulación** como una entidad independiente porque representa la relación entre un **Usuario** y una **Convocatoria** y, además, permite almacenar información propia de cada postulación, como la fecha, el estado y el puntaje asociado al proceso de selección.
+Se modeló **Postulación** como una entidad independiente porque representa la relación entre un **Usuario** y una **Convocatoria** y, además, permite almacenar información propia de cada postulación, como la fecha y el estado.
 
-Una alternativa hubiera sido relacionar directamente Usuario con Convocatoria, pero esta opción no permitiría registrar adecuadamente los datos específicos de cada postulación. Por este motivo, se decidió utilizar Postulación como entidad intermedia, incorporando `idUsuario` e `idConvocatoria` como claves foráneas.
+Una alternativa hubiera sido relacionar directamente Usuario con Convocatoria, pero esta opción no permitiría registrar los datos de cada postulación. Por eso se utiliza Postulación como entidad intermedia, con `idUsuario` e `idConvocatoria` como claves foráneas. Además, la combinación de ambas es única, lo que lleva al modelo la regla de que no se puede postular dos veces a la misma convocatoria.
 
 ### Decisión 2 — Relación entre Postulación y Entrevista.
 
 Se modeló **Entrevista** como una entidad independiente relacionada con **Postulación**, ya que una postulación puede generar una entrevista cuando el postulante avanza en el proceso de selección.
 
-La relación se definió como `1 — 0..1`, debido a que una postulación puede no tener una entrevista o puede tener una única entrevista. Cada entrevista pertenece obligatoriamente a una postulación.
+La relación es `1 — 0..1`: una postulación puede no tener entrevista o tener una sola, y cada entrevista pertenece obligatoriamente a una postulación. Para que el modelo lo garantice, `idPostulacion` es único dentro de Entrevista.
 
-Una alternativa hubiera sido permitir múltiples entrevistas por postulación, pero esto se descartó porque el modelo actual establece como máximo una entrevista para cada inscripción.
+Una alternativa hubiera sido permitir varias entrevistas por postulación (por ejemplo, una primera entrevista y una técnica). Se descartó porque los requisitos actuales contemplan una única entrevista por inscripción.
 
 ### Decisión 3 — La ubicación del CV.
 
-Se decidió representar el `cv` como un atributo de **Usuario**, porque el sistema contempla que cada postulante tenga un currículum cargado que pueda reemplazar cuando necesite actualizarlo.
+Se representó el `cv` como un atributo de **Usuario**, porque cada postulante tiene un único CV vigente que puede reemplazar cuando lo necesita (RF-09), y el sistema lo usa automáticamente en cada postulación (RF-14).
 
-Una alternativa sería modelar el CV como una entidad independiente para conservar diferentes versiones del archivo. Pero se optó por mantenerlo como atributo de Usuario porque el alcance actual requiere administrar un único CV vigente por usuario y no contempla un historial de versiones.
+Una alternativa sería modelar el CV como una entidad independiente para conservar sus versiones, o guardar una copia en cada Postulación. Se descartó porque el alcance actual no contempla historial: al reemplazar el CV, las empresas ven la versión vigente también en las postulaciones ya realizadas.
 
 ### Decisión 4 — Representación del resultado.
 
-Se decidió representar la información del resultado mediante los atributos `puntaje` y `estado` de **Entrevista**, mientras que **Postulación** mantiene sus propios atributos estado y puntaje para registrar la situación y la evaluación general de la inscripción.
+El resultado de la entrevista se guarda en los atributos `puntaje` y `resultado` de **Entrevista**. La **Postulación** no repite el puntaje: solo actualiza su `estado` (Aprobado o No aprobado) cuando la empresa registra el resultado.
 
-Una alternativa sería crear una entidad Resultado independiente. Sin embargo, se descartó porque los requisitos actuales permiten registrar esta información dentro de las entidades existentes, sin agregar una entidad adicional.
+En la versión anterior del modelo, Postulación también tenía un atributo `puntaje`. Se eliminó porque duplicaba el dato de Entrevista y podía quedar inconsistente si se modificaba uno solo de los dos. Otra alternativa era crear una entidad Resultado independiente; se descartó porque cada entrevista tiene un único resultado y no tiene datos propios que justifiquen otra entidad.
 
-### Decisión 5 — Diferenciación entre Usuario y Empresa.
+### Decisión 5 — Relación entre Usuario y Empresa.
 
-Se decidió modelar **Usuario** y **Empresa** como entidades independientes porque representan conceptos diferentes dentro del sistema. **Usuario** representa a las personas registradas, mientras que **Empresa** representa a las organizaciones que publican convocatorias.
+Todas las cuentas que acceden al sistema (postulantes, empresas y administradores) son registros de **Usuario**, que guarda el email, la contraseña, el rol (`tipoUsuario`) y los datos de bloqueo. **Empresa** guarda solo los datos institucionales y se vincula a su cuenta mediante `idUsuario`.
 
-El atributo `tipoUsuario` permite distinguir los roles de las personas registradas, como postulante o administrador. La empresa mantiene sus propios datos de identificación y acceso.
+En la versión anterior, Empresa tenía su propio email y contraseña. Se cambió porque los requisitos definen tres roles dentro del mismo sistema de acceso (RF-04) y exigen que el bloqueo por intentos fallidos y la baja de cuentas (RF-07, RF-08) funcionen igual para todos. Con credenciales en dos entidades, esas reglas tendrían que implementarse dos veces. El Administrador no necesita una entidad propia porque no tiene datos adicionales: es un Usuario con `tipoUsuario` = Administrador.
 
-Una alternativa sería utilizar una entidad general de cuenta para centralizar las credenciales de todos los actores. Pero se mantuvieron las entidades separadas para conservar la estructura del modelo actual y diferenciar los datos personales de los datos institucionales.
+### Decisión 6 — Carreras y su relación con las convocatorias.
+
+Se agregó la entidad **Carrera** en lugar de guardar la carrera como texto libre, para que el administrador mantenga una única lista (RF-28) y para poder filtrar convocatorias por carrera sin errores de escritura (RF-30).
+
+Como una convocatoria puede estar dirigida a varias carreras y una carrera puede recibir muchas convocatorias, la relación es de muchos a muchos. Se resolvió con la entidad intermedia **ConvocatoriaCarrera**. La alternativa de poner un único `idCarrera` en Convocatoria se descartó porque obligaría a duplicar una convocatoria para ofrecerla a más de una carrera.
+
+Las carreras no se borran: se desactivan con el atributo `activa`, porque eliminarlas dejaría sin carrera a los usuarios y convocatorias que ya la tienen registrada.
