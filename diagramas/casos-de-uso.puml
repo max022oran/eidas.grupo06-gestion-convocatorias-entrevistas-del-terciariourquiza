@@ -15,15 +15,23 @@ actor "Administrador" as Administrador
 rectangle "Sistema de Bolsa de Trabajo" {
 
 ' ======================================
-' CASOS DE USO - USUARIO
+' CASOS DE USO - COMUNES A TODOS LOS ACTORES
 ' ======================================
 
+usecase "Iniciar sesión" as UC13
+usecase "Ver inicio" as UC14
+
+' ======================================
+' CASOS DE USO - USUARIO / POSTULANTE
+' ======================================
+
+usecase "Registrarse" as UC15
 usecase "Ver convocatorias" as UC1
 usecase "Postularse a\nconvocatoria" as UC2
 usecase "Ver resultado" as UC3
 usecase "Consultar estado\nde su postulación" as UC4
 usecase "Cargar CV" as UC5
-
+usecase "Consultar entrevista" as UC16
 
 ' ======================================
 ' CASOS DE USO - EMPRESA
@@ -31,30 +39,45 @@ usecase "Cargar CV" as UC5
 
 usecase "Crear, editar o cerrar\nconvocatoria" as UC6
 usecase "Ver postulantes" as UC7
-usecase "Entrevistar\npostulantes" as UC8
+usecase "Programar entrevista" as UC8
 usecase "Cargar resultado" as UC9
-
 
 ' ======================================
 ' CASOS DE USO - ADMINISTRADOR
 ' ======================================
 
 usecase "Gestionar usuarios\ny permisos" as UC10
+usecase "Dar de alta empresa" as UC17
+usecase "Consultar padrón\nde usuarios" as UC19
+usecase "Gestionar carreras" as UC18
 usecase "Generar reportes" as UC11
 usecase "Ver resultados" as UC12
 
 }
 
 ' ======================================
-' RELACIONES - USUARIO
+' RELACIONES - COMUNES
 ' ======================================
 
+Usuario --> UC13
+Empresa --> UC13
+Administrador --> UC13
+
+Usuario --> UC14
+Empresa --> UC14
+Administrador --> UC14
+
+' ======================================
+' RELACIONES - USUARIO / POSTULANTE
+' ======================================
+
+Usuario --> UC15
 Usuario --> UC1
 Usuario --> UC2
 Usuario --> UC3
 Usuario --> UC4
 Usuario --> UC5
-
+Usuario --> UC16
 
 ' ======================================
 ' RELACIONES - EMPRESA
@@ -65,12 +88,14 @@ Empresa --> UC7
 Empresa --> UC8
 Empresa --> UC9
 
-
 ' ======================================
 ' RELACIONES - ADMINISTRADOR
 ' ======================================
 
 Administrador --> UC10
+Administrador --> UC17
+Administrador --> UC19
+Administrador --> UC18
 Administrador --> UC11
 Administrador --> UC12
 
