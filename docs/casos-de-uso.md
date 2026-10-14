@@ -9,7 +9,7 @@ _Describir brevemente los actores identificados y las relaciones principales (in
 
 ### Actores
 
-1. **Usuario / Postulante:** estudiante o egresado del Terciario Urquiza que se registra con su correo institucional para consultar convocatorias y participar en los procesos de selección. Sus casos de uso son: Registrarse, Ver convocatorias, Postularse a convocatoria, Ver resultado, Consultar estado de su postulación, Cargar CV y Consultar entrevista.
+1. **Usuario / Postulante:** docente o egresado del Terciario Urquiza que se registra con su correo institucional para consultar convocatorias y participar en los procesos de selección. Sus casos de uso son: Registrarse, Ver convocatorias, Postularse a convocatoria, Ver resultado, Consultar estado de su postulación, Cargar CV y Consultar entrevista.
 
 2. **Empresa:** organización que publica convocatorias y lleva adelante el proceso de selección. Su cuenta la crea el administrador. Sus casos de uso son: Crear, editar o cerrar convocatoria, Ver postulantes, Programar entrevista y Cargar resultado.
 
